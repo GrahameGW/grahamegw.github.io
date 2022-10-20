@@ -1,8 +1,159 @@
+body {
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
 .basepad {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+.content {
+    max-width: 640px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .only-print {
     display: none;
+}
+
+<!-- Stuff on macwright >
+:root{
+    --mono-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    --sans-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif
+}
+body{
+    color:#111;
+    margin:0 auto;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.6;
+    font-size:1rem;
+    font-family:var(--sans-font)
+}
+.only-print{
+    display:none
+}
+a{
+    color:#000;
+    text-decoration-skip-ink:auto;
+    text-decoration:underline
+}
+a:visited{
+    color:#333
+}
+ul{
+    margin:1rem 0
+}
+ul ul{
+    margin:0
+}
+.small,small{
+    font-size:14px
+}
+h2{
+    margin-bottom:.5rem;
+    line-height:1.25;
+    font-weight:600;
+    font-size:1.5rem;
+    letter-spacing:.009em
+}
+.limiter{
+    max-width:640px;
+    padding-left:20px;
+    padding-right:20px;
+    margin-left:auto;
+    margin-right:auto
+}
+.pad2y{
+    padding-top:20px;
+    padding-bottom:20px
+}
+.writing{
+    display:grid;
+    grid-column-gap:5px;
+    grid-row-gap:5px;
+    grid-template-columns:1fr min-content
+}
+.writing a{
+    font-weight:500;
+    letter-spacing:-.015em
+}
+.writing>div{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+}
+.writing time{
+    padding-right:.25em;
+    color:#333;
+    font-variant-numeric:tabular-nums;
+    letter-spacing:-.012em;
+    white-space:pre
+}
+@media screen and (max-width:640px){
+    .limiter{
+        width:auto
+    }
+    .writing{
+        grid-template-columns:1fr;
+        grid-row-gap:0
+    }
+    .writing div{
+        white-space:normal
+    }
+    .writing time{
+        padding-bottom:20px
+    }
+}
+@media screen and (min-width:640px){
+    .nu a{
+        text-decoration:none
+    }
+    .nu a:hover{
+        text-decoration:underline
+    }
+}
+@media screen and (max-width:1024px){
+    .header-wrap{
+        border-bottom:1px solid #000;
+        padding-bottom:20px
+    }
+}
+@media screen and (min-width:1025px){
+    .header{
+        position:absolute;
+        top:42px;
+        right:50%;
+        margin-right:340px!important;
+        letter-spacing:-.009em
+    }
+}
+@media print{
+    .no-print{
+        display:none
+    }
+    .only-print{
+        display:block
+    }
+    body{
+        margin:0
+    }
+    .limiter{
+        max-width:100%!important;
+        margin:0!important;
+        padding:0!important
+    }
+}
+.m{
+    color:#007f7f
+}
+.s{
+    color:#d01040
 }
