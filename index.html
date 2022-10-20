@@ -1,4 +1,19 @@
 ---
 layout: page
+title: Home
 ---
-<h1>{{ "Hello World!" | downcase }}</h1>
+
+<h1>Latest Posts</h1>
+
+<ul class="posts">
+    {% assign year = "" %}
+    {% assign post_year = "" %}
+    {% for post in site.posts %}
+        {% assign post_year = post.date | date: "%Y" %}
+        {% if post_year != year %}
+        {% assign year = post_year %}
+        <h1>{{ year }}</h1>
+        {% endif %}
+      <li><span>{{ post.date | date: "%d %B" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
