@@ -5,15 +5,16 @@ title: Home
 
 <h1>Latest Posts</h1>
 
-<ul class="posts">
+<div class="post-list">
     {% assign year = "" %}
     {% assign post_year = "" %}
     {% for post in site.posts %}
         {% assign post_year = post.date | date: "%Y" %}
         {% if post_year != year %}
         {% assign year = post_year %}
-        <h1>{{ year }}</h1>
+        <h2>{{ year }}</h2><span></span>
         {% endif %}
-      <li><span>{{ post.date | date: "%d %B" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <time>{{ post.date | date: "%d %B" }}</time>
+        <div><a href="{{ post.url }}" title="#{{ forloop.rindex }}">{{ post.title }}</a></div>
     {% endfor %}
-</ul>
+</div>
