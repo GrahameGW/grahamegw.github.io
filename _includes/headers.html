@@ -15,11 +15,15 @@
     <script type="application/ld+json">{"@context": "http://schema.org","@type": "CreativeWork","author": "Grahame Watt"}</script>
     <link href="https://grahamewatt.com/rss.xml" rel="alternate" type="application/rss+xml" title="grahamewatt.com">
     <link href="https://grahamewatt.com/atom.xml" rel="alternate" type="application/atom+xml" title="grahamewatt.com">
-    <link href="favicon.png" rel="icon" type="image/png">
-    <style>{% include style.css %}</style>
+    <link href="/favicon.png" rel="icon" type="image/png">
+    {% for entry in site.data.fonts.google %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ entry.font }}">
+    {% endfor %}
+    {% include style.html %}
     <title>Grahame Watt {% if page.title != "Home" %} | {{page.title}}{% endif %}</title>
     <link href="https://twitter.com/grahamegw" rel="me">
     <link href="https://github.com/grahamegw" rel="me">
     <link href="https://grahamewatt.com/" rel="canonical">
     <link href="mailto:contact@grahamewatt.com" rel="me">
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
 </head>

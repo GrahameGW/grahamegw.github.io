@@ -28,9 +28,17 @@ twitter_username: grahamegw
 github_username:  grahamegw
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+
+defaults:
+  - 
+    scope: 
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

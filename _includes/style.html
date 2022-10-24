@@ -1,11 +1,39 @@
-body{
+<style>
+body {
     color:#111;
     margin:0 auto;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
     line-height:1.6;
     font-size:1rem;
-    font-family:var(--sans-font)
+    /* font-family:var(--sans-font) */
+    font-family: {{ site.data.fonts.google[0].font }}, sans-serif;
+    /* font-family: "Franklin Gothic", serif; */
+}
+
+a {
+    color: #000090;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000090;
+    border-bottom: 1px solid #000090;
+}
+
+nav a {
+    color: #111;
+    text-decoration: none;
+}
+
+nav h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0px;
+}
+nav>ul {
+   list-style-type: none; 
+   padding: 0px;
+   margin-top: 0px;
 }
 
 .basepad {
@@ -15,7 +43,7 @@ body{
 
 .content {
     max-width: 640px;
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -38,10 +66,16 @@ body{
 }
 
 @media screen and (min-width:1025px){
-    .header{
+    nav{
         position:absolute;
         top:42px;
         right:50%;
         margin-right:340px!important;
     }
+
+    nav > * {
+        border-right: 1px #aaa solid;
+        padding-right: 20px;
+    }
 }
+</style>

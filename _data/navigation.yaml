@@ -1,4 +1,10 @@
 - name: Home
   link: /
-- name: About
-  link: /about.html
+- name: Fiction
+  link: /fiction.html
+- name: Games
+  link: /games.html
+- name: LinkedIn
+  link: https://linkedin.com/in/wattgrahame
+- name: Twitter
+  link: https://twitter.com/grahamegw
