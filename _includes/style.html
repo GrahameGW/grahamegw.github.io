@@ -1,4 +1,9 @@
 <style>
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     color:#111;
     margin:0 auto;
@@ -6,13 +11,29 @@ body {
     text-rendering:optimizeLegibility;
     line-height:1.6;
     font-size:1rem;
-    /* font-family:var(--sans-font) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: {{ site.data.fonts.google[0].font }}, sans-serif;
-    /* font-family: "Franklin Gothic", serif; */
+}
+
+footer {
+        border-top: 1px #aaa solid;
+        position: relative;
+        margin-top: auto;
+        left: 25%;
+        height: 65px;
+        width: 50%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 0.8rem;
+        -webkit-font-smoothing:antialiased;
+        text-rendering:optimizeLegibility;
+        color: #555;
 }
 
 a {
-    color: #000090;
+    color: #555;
     text-decoration: none;
 }
 
@@ -21,32 +42,48 @@ a:hover {
     border-bottom: 1px solid #000090;
 }
 
-nav a {
-    color: #111;
-    text-decoration: none;
-}
-
-nav h1 {
-    font-size: 1.3rem;
+h1, h2, h3, h4 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 400;
     margin-bottom: 0px;
 }
+
+h1 {
+    font-size: 1.875rem;
+}
+
+li {
+    margin-bottom: 1.1rem;
+}
+
+nav h2 {
+    font-size: 1.2em;
+}
+
 nav>ul {
    list-style-type: none; 
    padding: 0px;
    margin-top: 0px;
 }
 
-.basepad {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.content {
+main {
     max-width: 640px;
     padding-left: 40px;
-    padding-right: 20px;
+    padding-right: 40px;
     margin-left: auto;
     margin-right: auto;
+    border-left: 1px #aaa solid;
+}
+
+main img {
+    max-width: 640px;
+}
+
+.article-meta, .article-meta>p {
+    border-bottom: 1px #aaa solid;
+    text-align: right;
+    font-size: 12px;
+    margin: auto 0;
 }
 
 .post-list {
@@ -54,10 +91,12 @@ nav>ul {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     grid-template-columns: 0.35fr auto;
+    margin-top: 4px;
 }
 
 .post-list>time {
     padding-left: 20px;
+    padding-right: 40px;
     white-space: nowrap;
 }
 
@@ -65,17 +104,30 @@ nav>ul {
     display: none;
 }
 
+.pad20y {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
 @media screen and (min-width:1025px){
     nav{
         position:absolute;
         top:42px;
         right:50%;
-        margin-right:340px!important;
+        margin-right:360px!important;
+        padding-right: 40px;
     }
 
-    nav > * {
-        border-right: 1px #aaa solid;
-        padding-right: 20px;
+    aside {
+        position: absolute;
+        left: 50%;
+        margin-left:360px!important;
+        padding-left: 20px;
+        max-width: 200px;
+        font-size: 0.8rem;
+        border-left: 3px solid #555
     }
 }
 </style>

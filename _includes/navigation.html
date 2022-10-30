@@ -1,9 +1,9 @@
 <nav>
-  <h1>Grahame Watt</h1>
+  <h2>Grahame Watt</h2>
   <ul>
     {% for item in site.data.navigation %}
       <li>
-        <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+        <a href="{{ item.link }}" {% if page.url == item.link %}style="color: #df4133;"{% endif %}>
           {{ item.name }}
         </a>
       </li>

@@ -1,7 +1,17 @@
 ---
 layout: page
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
-
-{{ content }}
+<article>
+    <h1>{{ page.title }}</h1>
+    <div class="article-meta">
+        <p>
+            {% if page.tags.size > 0 %}
+            {{ page.tags | sort | join: ", " }}
+                / 
+            {% endif %}
+            {{ page.date | date: "%d %B %Y" }}</p>
+    </div>
+    <div class="article-content">  
+        {{ content }}
+    </div>
+</article>
