@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    color:#111;
+    color:#404040;
     margin:0 auto;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #efecec;
     font-family: {{ site.data.fonts.google[0].font }}, sans-serif;
 }
 
@@ -33,26 +34,35 @@ footer {
 }
 
 a {
-    color: #555;
+    color: #206161;
     text-decoration: none;
 }
 
 a:hover {
-    color: #000090;
-    border-bottom: 1px solid #000090;
+    color: #40d3d3;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Crimson Text', serif;
     font-weight: 400;
     margin-bottom: 0px;
+    margin-top: 20px;
+    color: #111
 }
 
 h1 {
-    font-size: 1.875rem;
+    font-size: 1.9rem;
 }
 
-li {
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+article li {
     margin-bottom: 1.1rem;
 }
 
@@ -64,6 +74,7 @@ nav>ul {
    list-style-type: none; 
    padding: 0px;
    margin-top: 0px;
+   font-size: 0.9rem;
 }
 
 main {
@@ -73,13 +84,31 @@ main {
     margin-left: auto;
     margin-right: auto;
     border-left: 1px #aaa solid;
+
 }
 
-main img {
+aside {
+    color: #555;
+    font-style: italic;
+}
+
+figure {
+    margin: 0 auto;
     max-width: 640px;
 }
+figure img {
+    width: 100%;
+    margin: 0px auto;
+}
 
-.article-meta, .article-meta>p {
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
+
+.article-meta>p {
     border-bottom: 1px #aaa solid;
     text-align: right;
     font-size: 12px;
@@ -127,7 +156,7 @@ main img {
         padding-left: 20px;
         max-width: 200px;
         font-size: 0.8rem;
-        border-left: 3px solid #555
+        border-left: 3px solid #788d8d
     }
 }
 </style>
