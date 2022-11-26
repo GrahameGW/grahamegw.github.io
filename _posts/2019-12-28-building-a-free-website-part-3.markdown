@@ -7,7 +7,11 @@ tags:   Projects Tech
 
 Welcome back.  This tutorial is the third in my series on setting up a website using  free infrastructure. We'll be installing NGINX (pronounced "engine-X") to use as a web server and setting up our DNS to use our domain name.
 
-<a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-2-setting-up-an-ec2-instance/">Part 2</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-4-mysql-amazon-rds-and-php/">Part 4</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5</a>
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
+[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
+[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
+[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
+[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 In the previous section, we set up an EC2 instance to run our website. Using the physical hardware <span name="simile">analogy</span> from earlier in the series, we have bought a computer, connected it to our firewall, and poked holes in the firewall so we can connect to it from the internet. Now, we need to install some software to actually make the website work. 
 

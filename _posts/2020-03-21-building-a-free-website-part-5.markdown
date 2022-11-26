@@ -4,15 +4,19 @@ title:  "Building a Free Website (LEMP on AWS) | Part 5 &ndash; Wordpress"
 date:   2020-03-21 16:07 -0700
 tags:   Projects Tech
 ---
-You've made it this far. I've made it this far. We've made it this far together. 
+You've made it this far. I've made it this far. We've made it this far together.
 
-Welcome to the final installment of Building a Free Website. We have a database, we have a server, and we've connected them all up. Now the time has come to install WordPress and launch our free site for the world to see. We'll also take care of some security things and set up our very own CDN. 
+Welcome to the final installment of Building a Free Website. We have a database, we have a server, and we've connected them all up. Now the time has come to install WordPress and launch our free site for the world to see. We'll also take care of some security things and set up our very own CDN.
 
 <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://iristech.co/wp-content/uploads/2018/04/blue-light-glowing.jpg" alt="" width="384" height="261"/><figcaption>*epic music plays*</figcaption></figure></div>
 
-As the series has progressed, we've gotten a bit more technical and I've tried to hold your hand a bit less. We'll be kicking that up a notch here as well; if something seems unclear or isn't working, let me know in the comments. You can see the previous installments here:
+As the series has progressed, we've gotten a bit more technical and I've tried to hold your hand a bit less. We'll be kicking that up a notch here as well.
 
- <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-2-setting-up-an-ec2-instance/">Part 2</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-4-mysql-amazon-rds-and-php/">Part 4</a>
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
+[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
+[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
+[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
+[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 Now, without further ado, let's get to it.
 

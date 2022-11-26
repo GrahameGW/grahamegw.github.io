@@ -15,7 +15,11 @@ Unfortunately, "Free Tier" is a bit of a misnomer, or at least a "subject to ter
 
 <aside name="ts-and-cs">Subject to terms and conditions</aside>
 
-<a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-2-setting-up-an-ec2-instance/">Part 2</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-4-mysql-amazon-rds-and-php/">Part 4</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5</a>
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
+[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
+[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
+[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
+[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
 
 Otherwise, let's do what we need to do now that <span name="wu-tang">money is once again part of the equation.</span> We're back with the (second) final part of <strong>How to Build a Free Website</strong>.
 
@@ -108,7 +112,7 @@ mysql&gt; FLUSH PRIVILEGES;
 // create wordpress user
 mysql&gt; CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'PASSWORD';
 mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'localhost' WITH GRANT OPTION;</pre>
-You'll notice that the commands once connected to MySQL take a different form. MySQL uses the SQL query language to perform all its operations, and has a small admin/operational database running in the background to make the program work. We use SQL to change the tables so that the app behaves as we want it to. 
+You'll notice that the commands once connected to MySQL take a different form. MySQL uses the SQL query language to perform all its operations, and has a small admin/operational database running in the background to make the program work. We use SQL to change the tables so that the app behaves as we want it to.
 
 As it turns out, databases are also created using SQL commands. So to create a new database, we use the following SQL command:
 <code class="EnlighterJSRAW" data-enlighter-language="generic">mysql&gt; CREATE DATABASE wpdatabase;</code>

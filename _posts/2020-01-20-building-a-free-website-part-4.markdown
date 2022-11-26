@@ -9,7 +9,11 @@ tags:   Projects Tech
 
 AWS can be used for so many things. A person could spend a lifetime playing with all the different tools they make available to you in the cloud. But you ain't got time for that, so read on for part four of my series on setting up a website using only free infrastructure. We'll be getting a database set up to power the Wordpress CMS with, the final piece of groundwork necessary  to launch our site.
 
- <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-2-setting-up-an-ec2-instance/">Part 2</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3</a><a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/"> </a>| <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5</a>
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
+[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
+[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
+[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
+[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 Last time, we installed NGINX, configured the DNS to use our domain name, and got a primer in how NGNIX manages websites and serves pages to visitors. We also got familiar with the command line, and computing without help from the windows and folders we're so familiar with. Doing so takes care of the 'L' and 'E' in 'LEMP', which means the 'M' is up next: MySQL on Amazon RDS.
 
