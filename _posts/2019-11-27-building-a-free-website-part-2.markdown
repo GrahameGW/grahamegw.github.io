@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Setting Up an EC2 Instance | Building a Free Website (LEMP on AWS) | Part 2"
+title:  "Building a Free Website (LEMP on AWS) | Part 2 &ndash; EC2 Instances"
 date:   2019-11-27 12:50:03 -0700
 tags:   Projects Tech
 ---
 
-<p>This tutorial is the second in my series on setting up a website using free infrastructure. In this section we'll cover booting up and connecting to your EC2 instance, configuring security groups, and some basic command line tools for folks who have never used the command line before.</p>
+This tutorial is the second in my series on setting up a website using free infrastructure. In this section we'll cover booting up and connecting to your EC2 instance, configuring security groups, and some basic command line tools for folks who have never used the command line before.
 
-<p><a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3</a> | <a href="http://part%204/">Part 4</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5</a></p>
+<a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part 1</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3</a> | <a href="http://part%204/">Part 4</a> | <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5</a>
 
 <h2>EC2 overview</h2>
 

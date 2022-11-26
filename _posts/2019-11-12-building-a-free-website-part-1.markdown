@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Plan | Building a Free Website (LEMP on AWS) | Part 1"
+title:  "Building a Free Website (LEMP on AWS) | Part 1 &ndash; The Plan"
 date:   2019-11-12 21:10 -0700
 tags:   Projects Tech
 ---
