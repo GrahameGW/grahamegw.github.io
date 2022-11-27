@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Post-mortem: Curveball"
+title:  "Curveball Post-mortem"
 date:   2020-06-16 10:59 -0700
 tags:   [Game Development, Projects]
 ---

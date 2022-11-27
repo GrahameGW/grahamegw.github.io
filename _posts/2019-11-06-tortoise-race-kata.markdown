@@ -14,20 +14,18 @@ More generally: given two speeds `v1` (*A*‘s speed, integer > 0) and `v2` (*B*
 The result will be an array `[hour, min, sec]` which is the time needed in hours, minutes and seconds (round down to the nearest second) or a string in some languages.
 
 ## My answer
-    public class Tortoise
-    {
-      public static int[] Race(int v1, int v2, int g) 
-      {
-        if (v1 < v2) 
-          {
-          int dv = (v2 - v1); // net fph 
-          int hr = g / dv;     
-          int min = 60 * (g % dv) / dv;
-          
-          int[] time = new int[] {hr, min, sec};
-          Console.Write(time[0] + " " + time[1] + " " + time[2]);
-          return time;
-          }
-          return null;
-        }
-    }
+
+<pre><code class="language-csharp">public static int[] Race(int v1, int v2, int g)
+{
+  if (v1 < v2)
+  {
+    int dv = (v2 - v1); // net fph
+    int hr = g / dv;
+    int min = 60 * (g % dv) / dv;
+
+    int[] time = new int[] {hr, min, sec};
+    return time;
+  }
+    
+  return null;
+}</code></pre>

@@ -1,7 +1,9 @@
 ---
 title: Home
 ---
-
+<div>
+    <h1 style="margin-top: 0.5rem";>Articles</h1>
+</div>
 <div class="post-list">
     {% assign year = "" %}
     {% assign post_year = "" %}
@@ -9,7 +11,7 @@ title: Home
         {% assign post_year = post.date | date: "%Y" %}
         {% if post_year != year %}
         {% assign year = post_year %}
-        <h3>{{ year }}</h3><span></span>
+        <h2>{{ year }}</h2><span name="grid-fill"></span>
         {% endif %}
         <time>{{ post.date | date: "%d %B" }}</time>
         <div><a href="{{ post.url }}" title="#{{ forloop.rindex }}">{{ post.title }}</a></div>

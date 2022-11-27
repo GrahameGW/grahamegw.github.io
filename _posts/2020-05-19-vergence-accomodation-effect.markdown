@@ -31,13 +31,13 @@ Our eyes have evolved to allow us to control our focus (accommodation) independe
 
 <figure class="wp-block-image"><img src="https://1.bp.blogspot.com/_cxmptAPYR-s/Rnv28F0TfmI/AAAAAAAABHQ/DbDkvL8LJNU/s1600/Stereogram+2.png" alt="[Stereogram+2.png]"/><figcaption>An autostereogram</figcaption></figure>
 
-<span name="effort">Consciously controlling this reflex takes effort</span> since we're actively working against what our systems want to do. Your body wants to keep vergence and accommodation in sync so you can see properly, and it <span name="slacker-alarm">doesn't like it when it detects you doing something counterproductive.</span>
+<span name="effort">Consciously controlling this reflex takes effort</span> since we're actively working against what our systems want to do. Your body wants to keep vergence and accommodation in sync so you can see properly, and it doesn't like it when it detects you doing something <span name="slacker-alarm">counterproductive.</span>
 
 <aside name="effort">Which, if you just spent a few minutes staring at that image, you'll be feeling right now</aside>
 
 <aside name="slacker-alarm">If only it behaved the same way when it came to other things that are bad for us...</aside>
 
-This is one of the main problems bedeviling VR and AR headsets. The main sets on the market right now all use a stereoscopic setup, where the user looks through <span name="lenses">two lenses focused at one point on a flat display.</span> Thus, the user's vergence distance is fixed in place.
+This is one of the main problems bedeviling VR and AR headsets. The main sets on the market right now all use a stereoscopic setup, where the user looks through two lenses <span name="lenses">focused at one point on a flat display.</span> Thus, the user's vergence distance is fixed in place.
 
 <aside name="lenses">Because of the way stereoscopic lenses work, they're actually focused at two separate points, each on a slightly different angle of the scene. To the viewer, they appear to be focused at one point, usually "infinity."</aside>
 

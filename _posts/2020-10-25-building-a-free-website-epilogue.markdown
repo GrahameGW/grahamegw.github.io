@@ -59,7 +59,7 @@ There's a second point here that the additional costs of RDS also masks. AWS doe
 
 What this means is that if you run two instances, <span name="pay-double">you pay double</span> what you would pay for a single instance. Obvious in hindsight, but surprisingly easy to overlook if you're not paying attention.
 
-<aside name="pay-double">It's slightly more complicated than this, as AWS uses a system of "credits" to actually calculate how many hours a given machine uses; larger and more powerful machines count as running several instances simultaneously</aside> 
+<aside name="pay-double">It's slightly more complicated than this, as AWS uses a system of "credits" to actually calculate how many hours a given machine uses; larger and more powerful machines count as running several instances simultaneously</aside>
 
 Clearly then, the move is to ditch RDS altogether, in favor of bringing everything into one single EC2 instance. <span name="low-expectations">I don't expect</span> my traffic or content to balloon over the next twelve months, so I see no reason to increase the size or power of my existing EC2 instance. I'm simply going to export my database out of RDS, install MySQL in my EC2 instance, and reimport my database. After wiring WordPress up to the new, local database, I'll delete my RDS instance and save myself some cash.
 
