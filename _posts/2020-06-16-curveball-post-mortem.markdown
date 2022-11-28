@@ -11,7 +11,7 @@ I spent a couple of days rebuilding the classic flash game <a href="http://curve
 
 Corvebawl is a simple game and has a simple code base as a result. A <code>Game</code> manager controls the game state, a <code>UI</code> manager controls the UI (menus, volume, score), the players each extend a <code>Paddle</code> class with the <code>PlayerPaddle</code> containing input logic and the <code>PaddleAI</code> containing AI logic. The ball itself contains the most complicated series of scripting: it has several functions used to handle how it behaves when hit by each paddle, how spin and curve is calculated, and path tracing used by the AI paddle to predict where it will end up. A few other special effects scripts round out the code base.
 
-None of this required anything particularly complex to implement. In fact, my biggest mistake in programming was likely overbuilding things to start with. I had barely set up the game arena in the Unity editor before I was creating classes for every single object in the scene. I did manage to dial a chunk of it back, but my code is still somewhat overbuilt for what it needed to be. I wrote several classes that I ultimately ended up deleting, as they had no real purpose. 
+None of this required anything particularly complex to implement. In fact, my biggest mistake in programming was likely overbuilding things to start with. I had barely set up the game arena in the Unity editor before I was creating classes for every single object in the scene. I did manage to dial a chunk of it back, but my code is still somewhat overbuilt for what it needed to be. I wrote several classes that I ultimately ended up deleting, as they had no real purpose.
 
 <strong>Lesson:</strong> Don't build things until you need them. Keep it simple and clean.
 
@@ -19,11 +19,14 @@ None of this required anything particularly complex to implement. In fact, my bi
 
 Perhaps the biggest challenge I had in programming was creating a competent AI. Initially, my plan was to implement a solution I had found on <a href="https://gamedev.stackexchange.com/a/57397">Stack Exchange</a>:
 
-<blockquote class="wp-block-quote"><strong>Invisible Ball AI</strong><em>AI Setup:</em> When the ball reflects off your paddle, you know where it is and how fast it is going. Spawn an invisible ball at that point but at a greater speed. It will wind up where the visible ball is going. Each frame, have the AI move towards the location of the invisible ball. Stop the invisible ball once it reaches the AI's side, so it is where the AI should move its paddle.
+<blockquote class="wp-block-quote">
+<p><strong>Invisible Ball AI</strong></p>
+<p><em>AI Setup:</em> When the ball reflects off your paddle, you know where it is and how fast it is going. Spawn an invisible ball at that point but at a greater speed. It will wind up where the visible ball is going. Each frame, have the AI move towards the location of the invisible ball. Stop the invisible ball once it reaches the AI's side, so it is where the AI should move its paddle.</p>
 
-<em>Results: </em>The AI looks like it's trying to predict the path of the ball. Say the player has reflected the ball at a steep angle so that it will bounce off a wall. The AI will track the ball down a little ways, and then—being slower than the ball—will fail to track it back up fast enough. You have tricked the AI, and it looks fairly logical from a human point of view. You can see the computer trying to predict where the ball will go, and then it moves—oh, it missed, it was too slow, and you have won a point.
+<p><em>Results:</em> The AI looks like it's trying to predict the path of the ball. Say the player has reflected the ball at a steep angle so that it will bounce off a wall. The AI will track the ball down a little ways, and then—being slower than the ball—will fail to track it back up fast enough. You have tricked the AI, and it looks fairly logical from a human point of view. You can see the computer trying to predict where the ball will go, and then it moves—oh, it missed, it was too slow, and you have won a point.</p>
 
-This is significantly better than inserting randomness, since it makes the AI look relatively intelligent. A worthy opponent. It also lets the AI play by the exact same rules as the human, which looks better to the player and makes your job easier.</blockquote>
+<p>This is significantly better than inserting randomness, since it makes the AI look relatively intelligent. A worthy opponent. It also lets the AI play by the exact same rules as the human, which looks better to the player and makes your job easier.</p>
+</blockquote>
 
 It took me a little bit, but I implemented this without too much difficulty... and it didn't work. The AI was good for a point or two, but then would seem to completely fly off the rails. What was going on?
 

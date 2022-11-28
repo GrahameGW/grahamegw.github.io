@@ -17,13 +17,15 @@ Powered by Macromedia (now Adobe) Flash, the internet was awash in games and car
 
 Some were awesome.
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093231/curveball-game-ss.png" alt="" class="wp-image-737"/><figcaption>A classic</figcaption></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093231/curveball-game-ss.png" alt=""/><figcaption>A classic</figcaption></figure>
 
-<a href="http://curveball-game.com">Curveball</a> was one of those games. Not much more than 3D Pong, it somehow managed to become one of the most played flash games of the late 90s. Not that Pong wasn't addictive in its time, but Curveball managed to shine in a world that was not just discovering video games for the first time. It's anyone's guess as to why, but if I had to guess, I'd say it was the spin mechanic: by moving the paddle as the ball made contact with it, you could apply <span name="technical-spin">topspin to the ball,</span> causing it to hook and bend like crazy. It felt realistic, it felt controllable, and it was SO MUCH FUN.
+<a href="http://curveball-game.com">Curveball</a> was one of those games. Not much more than 3D Pong, it somehow managed to become one of the most played flash games of the late 90s. Not that Pong wasn't addictive in its time, but Curveball managed to shine in a world that was not just discovering video games for the first time. <span name="technical-spin">It's anyone's guess as to why,</span> but if I had to guess, I'd say it was the spin mechanic: by moving the paddle as the ball made contact with it, you could apply topspin to the ball, causing it to hook and bend like crazy. It felt realistic, it felt controllable, and it was SO MUCH FUN.
 
 <aside name="technical-spin">Technically, it's just spin since there's no gravity. Backspin works when there's a force pulling against the direction the ball wants to go.</aside>
 
-Unfortunately, Curveball relies on Flash. <a href="http://reddit.com/r/explainlikeimfive/comments/h7jwsz/eli5_why_is_adobe_flash_so_insecure/">Flash is insecure</a> for a number of reasons, and most of the major browsers are in the process of phasing out support for the technology.<aside name="">Chrome and Firefox have already stopped supporting it</aside> So playing it requires going back to Internet Explorer. Which I'm not willing to do.
+Unfortunately, Curveball relies on Flash. <a href="http://reddit.com/r/explainlikeimfive/comments/h7jwsz/eli5_why_is_adobe_flash_so_insecure/">Flash is insecure</a> for a number of reasons, and most of the major browsers are in the process of <span name="no-support">phasing out support for the technology.</span>
+
+<aside name="no-support">Chrome and Firefox have already stopped supporting it</aside> So playing it requires going back to Internet Explorer. Which I'm not willing to do.
 
 So I decided to build it myself. Over the last year or so, I've been teaching myself to program and have been playing around with Unity, one of the two major game engines on the market today. Building a clone meant I would have a finished game under my belt, which is a milestone I had yet to reach. It was a fun process, challenging at times, but I build a complete v1 game that used most of the main systems in Unity:
 
@@ -31,8 +33,8 @@ So I decided to build it myself. Over the last year or so, I've been teaching my
 
 The result? <a href="https://grahamewatt.com/games/corvebawl/">Corvebawl</a>:
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093116/corvebawl-ss2.png" alt="" class="wp-image-736"/></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093116/corvebawl-ss2.png" alt=""/></figure>
 
 I'm <a href="https://grahamewatt.com/games/corvebawl/">hosting it here</a>, so please check it out and let me know what you like/dislike about it. If you're interested in playing around with the project yourself, I've uploaded the <a href="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/12132224/corvebawl.unitypackage">unitypackage</a> file for you to download.
 
-I have a <a href="https://grahamewatt.com/corvebawl-post-mortem">full post-mortem</a> you can check out if you're interested in some of the lessons learned and challenges I faced in actually building the game.
+I have a [full post-mortem]({% post_url 2020-06-16-curveball-post-mortem %}) you can check out if you're interested in some of the lessons learned and challenges I faced in actually building the game.

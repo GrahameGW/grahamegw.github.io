@@ -5,11 +5,14 @@ date:   2020-10-25 11:05 -0700
 tags:   Projects Tech
 ---
 
-It feels like just a few weeks ago that I launched a free website, and shared the process with the world. But then I woke up to a bill from AWS, an unhappy reminder that <span name="steve-miller">time keeps on slipping, slipping, slipping...</span>
+It feels like just a few weeks ago that I launched a free website, and shared the process with the world. But then I woke up to a bill from AWS, an unhappy reminder that time keeps on slipping, slipping, <span name="steve-miller">slipping...</span>
 
 <aside name="steve-miller">INTO THE FUUUUTUREEEEE</aside>
 
-<div class="wp-block-image"><figure class="aligncenter size-medium"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12095016/61QnNJiO7VL._SL1079_-300x300.jpg" alt="" class="wp-image-891"/><figcaption>Earworm deployed <em>(Image: Amazon.com)</em></figcaption></figure></div>
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12095016/61QnNJiO7VL._SL1079_-300x300.jpg" alt="" />
+    <figcaption>Earworm deployed <em>(Image: Amazon.com)</em></figcaption>
+</figure>
 
 Unfortunately, "Free Tier" is a bit of a misnomer, or at least a "subject to terms and conditions" kind of thing. Free web hosting was never gonna last forever, and so now it comes time to settle our accounts. If you've not got <span name="ts-and-cs">a free</span> website up and running, check out the whole series first:
 
@@ -19,7 +22,7 @@ Unfortunately, "Free Tier" is a bit of a misnomer, or at least a "subject to ter
 [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
 [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
 [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
-[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
+[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %})
 
 Otherwise, let's do what we need to do now that <span name="wu-tang">money is once again part of the equation.</span> We're back with the (second) final part of <strong>How to Build a Free Website</strong>.
 
@@ -29,7 +32,7 @@ Otherwise, let's do what we need to do now that <span name="wu-tang">money is on
 
 I'll be the first to admit, I was not expecting the price tag on my first full month out of Free Tier services:
 
-<figure class="wp-block-image size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12100648/bill-1024x129.png" alt="" class="wp-image-893"/><figcaption>Ooof...</figcaption></figure>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12100648/bill-1024x129.png" alt=""/><figcaption>Ooof...</figcaption></figure>
 
 $26 bucks? For a website I can set up at Bluehost or Hostgator for $10? And I don't have to spend time updating things?
 
@@ -43,7 +46,7 @@ Web hosting businesses all run off the same model (plus or minus): get a lot of 
 
 So I looked at the line items, and found the culprits:
 
-<figure class="wp-block-image size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12102258/image-1-1024x468.png" alt="" class="wp-image-895"/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12102258/image-1-1024x468.png" alt=""/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
 
 I'm getting slammed by RDS (database) costs. My EC2 costs are higher than I'd like, as they're break even with web hosting services for the same product and zero of the services. But there's no point in addressing the EC2 item if we can't do something about RDS.
 
@@ -55,9 +58,9 @@ The extra features are great if you're running a SaaS app in the cloud, storing 
 
 There's a second point here that the additional costs of RDS also masks. AWS does pricing on "compute hours," which is calculated as:
 
-<blockquote class="wp-block-quote"># of instances × # hours running</blockquote>
+<blockquote class="wp-block-quote"><span name="pay-double"># of instances × # hours running</span></blockquote>
 
-What this means is that if you run two instances, <span name="pay-double">you pay double</span> what you would pay for a single instance. Obvious in hindsight, but surprisingly easy to overlook if you're not paying attention.
+What this means is that if you run two instances, you pay double what you would pay for a single instance. Obvious in hindsight, but surprisingly easy to overlook if you're not paying attention.
 
 <aside name="pay-double">It's slightly more complicated than this, as AWS uses a system of "credits" to actually calculate how many hours a given machine uses; larger and more powerful machines count as running several instances simultaneously</aside>
 
@@ -78,14 +81,19 @@ First we need to get into our RDS instance. You <em>can</em> set up an SSH tunne
 <h3>Exporting our current database</h3>
 
 Turns out, we've got something like that! SSH into your EC2 instance (which we know is in the group since it talks to the database). If you don't have it written down, you'll need to get all your database connection info from your <code>wp-config.php</code> file. You'll also need to <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04">install MySQL</a> on your EC2 instance if it's not already there. It's a straightforward process; just run the following three commands:
-<pre class="EnlighterJSRAW" data-enlighter-language="generic">$ sudo apt update
+
+<pre><code class="language-shell">$ sudo apt update
 $ sudo apt install mysql-server
 $ sudo mysql_secure_installation
-</pre>
+</code></pre>
+
 You'll be prompted with a whole bunch of security questions. Create a password for the root user, and accept the defaults for everything else. Once you're done, check the status of the MySQL service with the command <code>service mysql status</code>.
 
 Once MySQL is installed, we can connect to our remote RDS instance with a single command:
-<code class="EnlighterJSRAW" data-enlighter-language="generic">$ mysql -u wordpress -h wpdatabase.cabthgz5oiyo.us-east-1.rds.amazonaws.com -P 3306 -D wpdatabase</code>
+
+<pre><code class="language-shell">$ mysql -u wordpress -h wpdatabase.cabthgz5oiyo.us-east-1.rds.amazonaws.com -P 3306 -D wpdatabase
+</code></pre>
+
 It should look pretty familiar, but let's break it down anyway:
 
 <ul><li><code>mysql</code>: the program we want to run</li><li><code>-h</code>: the "host" parameter. This is the location of the computer running our database.</li><li><code>-D</code>: the "database" parameter. We want to connect to a database on our host with the name <code>wpdatabase</code></li><li><code>-u</code>: the "user" parameter. We want to have the user permissions of the user <code>wordpress</code></li><li><code>-P</code>: the "port" parameter. By default, MySQL listens for connections on port 3306. </li></ul>
@@ -93,7 +101,9 @@ It should look pretty familiar, but let's break it down anyway:
 Give it a whirl and make sure you can connect (you'll be prompted for the database password). Once you know it's working, quit using the MySQL command <code>\q</code> (pressing Ctrl+C should also work). You'll end up back in your EC2 instance.
 
 To actually export our database, we'll use a utility included with our MySQL installation called <code>mysqldump</code>, which uses the same syntax as MySQL does:
-<code class="EnlighterJSRAW" data-enlighter-language="generic">$ mysqldump -u wordpress -h wpdatabase.cabthgz5oiyo.us-east-1.rds.amazonaws.com -P 3306 -D wpdatabase &gt; db-export.sql</code>
+
+<pre><code class="language-shell">$ mysqldump -u wordpress -h wpdatabase.cabthgz5oiyo.us-east-1.rds.amazonaws.com -P 3306 -D wpdatabase &gt; db-export.sql</code></pre>
+
 The only changes here are the program name (now <code>mysqldump</code>) and a tailing command, denoted by the <code>&gt;</code> character. The names and syntax might feel a little intuitive, particularly if you think of the <code>&gt;</code> not as a "greater than" symbol but as an arrow pointing right. We are telling <code>mysqldump </code>to output the results of the command to a file called <code>db-export.sql</code>. You can name your file whatever you like, but make sure it has the <code>.sql </code>file extension for clarity and to avoid issues further down the line.
 
 Run the command. It'll take a few seconds or even a minute or two; any longer and either something is wrong or your site is way too popular for this tutorial. Once complete, we can <code>ls</code> in our current folder to check the export file is where we want it to be.
@@ -101,24 +111,30 @@ Run the command. It'll take a few seconds or even a minute or two; any longer an
 <h3>Rebuilding our database</h3>
 
 First, we need to set up our local MySQL install to receive our new database. We need to recreate the <code>wordpress</code> user, and take care of some general admin stuff. For a more detailed explanation of how to do this, check out Step Three of this <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04#step-3-%E2%80%94-(optional)-adjusting-user-authentication-and-privileges">excellent Digital Ocean article</a>. For the quick and dirty version, simply run the following commands:
-<pre class="EnlighterJSRAW" data-enlighter-language="generic">// start MySQL
+
+<pre><code class="language-shell">// start MySQL
 $ sudo mysql
 
 // update the root user to use a password (optional)
-mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '
-[PASSWORD_FROM_INSTALL]';
+mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '[PASSWORD_FROM_INSTALL]';
 mysql&gt; FLUSH PRIVILEGES;
 
 // create wordpress user
 mysql&gt; CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'PASSWORD';
-mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'localhost' WITH GRANT OPTION;</pre>
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'localhost' WITH GRANT OPTION;
+</code></pre>
+
 You'll notice that the commands once connected to MySQL take a different form. MySQL uses the SQL query language to perform all its operations, and has a small admin/operational database running in the background to make the program work. We use SQL to change the tables so that the app behaves as we want it to.
 
 As it turns out, databases are also created using SQL commands. So to create a new database, we use the following SQL command:
-<code class="EnlighterJSRAW" data-enlighter-language="generic">mysql&gt; CREATE DATABASE wpdatabase;</code>
+
+<pre><code class="language-shell">mysql&gt; CREATE DATABASE wpdatabase;</code></pre>
+
  And thanks to <code>mysqldump</code>, we have a file full of SQL commands that will rebuild our database for us! We just need to tell MySQL to run it. Exit MySQL, confirm you're in the folder with our <code>db-export</code> file, and run the import with:
-<code class="EnlighterJSRAW" data-enlighter-language="generic">$ mysql -u wordpress -p wpdatabase &lt; db-export.sql</code>
-Boom. Done. 
+
+<pre><code class="language-shell">$ mysql -u wordpress -p wpdatabase &lt; db-export.sql</code></pre>
+
+Boom. Done.
 
 All that remains is cleanup. Edit your <code>wp-config.php</code> file with the new database info, changing the <code>'DB_HOST'</code> line to use <code>'localhost'</code> instead of the RDS URL. Save, and go check out your website. It should be still up and running; in fact it should look <span name="boring">exactly the same</span> as it did before. When you're comfortable, stop your AWS RDS instance, and then delete it altogether (apparently AWS will automatically restart any database left off for seven days).
 

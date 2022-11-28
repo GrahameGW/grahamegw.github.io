@@ -9,7 +9,7 @@ Two years ago it was <em>Ready Player One</em>. Two decades ago it was <em>The M
 
 In certain realms, we are seeing the promised future unfold. VR games are a real, viable product that consumers can buy and enjoy from the comfort of their living room. You think zombie games are scary? Try playing them in VR, where reloading is an actual thing you have to do (not just press a button and wait for an animation) and getting your face eaten because you fumbled the fresh clip is now on the table. Or don't get to the zombie parts, and spend hours drawing on a window with whiteboard markers instead. It's up to you.
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/07/04093346/half-life-alyx-shots-1024x664.jpg" alt="" class="wp-image-812" width="768" height="498"/><figcaption>Option A: Fight sci-fi monsters. Option B: MATH! <em>(Images: Valve)</em></figcaption></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/07/04093346/half-life-alyx-shots-1024x664.jpg" alt="" width="768" height="498"/><figcaption>Option A: Fight sci-fi monsters. Option B: MATH! <em>(Images: Valve)</em></figcaption></figure>
 
 In other realms, VR adoption is noticeably absent. I don't put on a VR set to go to the office, even though social distancing and quarantine has provided the perfect opportunity to try it out. I don't use VR to play board games with friends, even though Zoom meetings still leave a lot to be desired. Something is missing that keeps VR from attaining mass adoption in the mundane. But what?
 
@@ -29,11 +29,13 @@ Our digital mall:
 
 <ul><li>Will host storefronts and billboards for vendors to advertise to users</li><li>Will filter and display stores based on what the user is looking for</li><li>Will provide a way for users to interact with virtual models of products</li><li>Will have a "forum" or other central area that users share with one another as they shop, promoting both a community experience and giving vendors another opportunity to advertise (e.g., clothes, accessories)</li><li>Will support <a href="https://newatlas.com/eye-tracking-vr-infinite-walking/54824/">walking</a> and <a href="https://www.engadget.com/2016-10-07-why-teleportation-makes-sense-in-virtual-reality.html">teleportation</a> methods of movement</li><li>Will be on the internet</li></ul>
 
-Pretty simple. In fact, there are several software platforms that already have most of these features.[efn_note]<a href="https://altvr.com/">AltspaceVR</a> and <a href="http://spatial.io">Spatial</a>, to name two[/efn_note] While there's definitely some additional dev work required to implement the instancing and sorting/filtering required to complete the mall environment, it certainly is not out of the realm of possibility for a well-resourced team of developers to knock out in a few months or years.
+Pretty simple. In fact, there are <span name="platforms">several software platforms</span> that already have most of these features. While there's definitely some additional dev work required to implement the instancing and sorting/filtering required to complete the mall environment, it certainly is not out of the realm of possibility for a well-resourced team of developers to knock out in a few months or years.
+
+<aside name="platforms"><a href="https://altvr.com/">AltspaceVR</a> and <a href="http://spatial.io">Spatial</a>, to name two</aside>
 
 The important pieces here are the hardware requirements our mall has outlined for use. Our future VR set must:
 
-<ul><li>Enable users to easily handle 3D models of products</li><li>Allow users to closely examine products without causing <a href="https://grahamewatt.com/why-does-vr-make-my-eyes-hurt/">dizziness or headaches</a></li><li><span name="look-down">Look at users' feet without the headset shifting</span></li><li>Be comfortable enough to wear for long stretches of time<ul><li>The assumption here is that vendors want users in their "store" as long as possible</li></ul></li><li>Include easy-to-use headphone/microphone setups that allow users to communicate with store staff (whether human-controlled avatars or chatbots) </li></ul>
+<ul><li>Enable users to easily handle 3D models of products</li><li>Allow users to closely examine products without [causing dizziness or headaches]({% post_url 2020-05-19-vergence-accomodation-effect %})</li><li><span name="look-down">Look at users' feet without the headset shifting</span></li><li>Be comfortable enough to wear for long stretches of time<ul><li>The assumption here is that vendors want users in their "store" as long as possible</li></ul></li><li>Include easy-to-use headphone/microphone setups that allow users to communicate with store staff (whether human-controlled avatars or chatbots) </li></ul>
 
 <aside name="look-down">Hence the reason we're using shoes as the example here</aside>
 
@@ -45,7 +47,7 @@ As anyone who has played a VR game knows, this requirement is all about degrees 
 
 <aside name="fine-control">Using wands to pick up objects means you're either holding something or not; there's no variance in how you hold something</aside>
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/07/04093742/controlelrs.jpg" alt="" class="wp-image-813" width="581" height="128"/><figcaption>Choose your weapon</figcaption></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/07/04093742/controlelrs.jpg" alt="" width="581" height="128"/><figcaption>Choose your weapon</figcaption></figure>
 
 The ultimate reach goal for handling objects is<a href="https://haptx.com/"> haptic controllers</a>. Haptics provide sensory feedback when touching objects in the world, and would allow users to feel the different materials and heft of the object in the VR simulation. There are a few teams working on haptic gloves and equipment, but there's a long way to go before they're consumer-ready. In my book, haptics are a nice-to-have but not at all mandatory for extended VR activities. If you're insistent about rebuilding the <em>Ready Player One</em> world, just remember that Wade Watts didn't get anything that fancy until the second act. If they aren't mandatory in sci-fi, they aren't mandatory in the real world.
 
