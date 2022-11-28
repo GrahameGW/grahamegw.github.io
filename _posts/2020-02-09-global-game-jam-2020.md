@@ -9,7 +9,7 @@ tags:   [Game Development, Projects]
 
 Last weekend (Jan 28), nearly sixty people descended on <a href="https://www.cdm.depaul.edu/about/Pages/School-of-Computing.aspx">DePaul's CDM</a> to take part in the 2020 edition of the <a href="https://globalgamejam.org/">Global Game Jam</a>. As I've been getting more and more involved in the video game development community, and my computer programming skills have improved to the level of barely competent thanks to time spent messing around with <a href="https://unity.com/">Unity</a>, I decided that I would dive in for forty-eight hours of video game development madness.
 
-<div class="wp-block-image"><figure class="alignright size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/05141144/tux-repair-banner.png" alt="" class="wp-image-372" width="392" height="225"/></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/05141144/tux-repair-banner.png" alt=""width="392" height="225"/></figure>
 
 The results?
 
@@ -25,7 +25,7 @@ First, some context. A game jam is a video game version of a hackathon or 24-/48
 
 <aside name="">You weren't required to build a game engine, but you weren't supposed to bring in any prebuilt projects. So <a href="https://www.nownovel.com/blog/what-is-nanowrimo/">NaNoWriMo rules</a>.</aside>
 
-<div class="wp-block-image"><figure class="alignright size-large"><img src="https://media.giphy.com/media/MvedbKot538WY/source.gif" alt=""/></figure></div>
+<figure><img src="https://media.giphy.com/media/MvedbKot538WY/source.gif" alt=""/></figure>
 
 The <a href="https://globalgamejam.org">Global Game Jam</a> is a global game jam.<aside name="">Shocker.</aside> Started by <a href="https://www.cdm.depaul.edu/Faculty-and-Staff/Pages/faculty-info.aspx?fid=516">Susan Gold</a> in 2008, the GGJ has grown to 113 countries and develops <strong>over 9,000 games </strong>annually. That includes all of the official statistics; I quickly learned from some of the folks there that it is common for developers to skip the official jam but take the chance to leverage an artificial deadline to get the creative juices flowing.
 
@@ -33,7 +33,7 @@ Teams usually assemble on the day of the event, though, it being held at DePaul,
 
 <aside name="jammer">Demonym: one who participates in a game jam.</aside>
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/09141800/ggg.jpg" alt="Susan Gold speaking at GGJ 2020" class="wp-image-396" width="572" height="359"/><figcaption> Susan Gold speaking at GGJ 2020 (Photo: Ross Hersemann, IGDA) </figcaption></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/09141800/ggg.jpg" alt="Susan Gold speaking at GGJ 2020" width="572" height="359"/><figcaption> Susan Gold speaking at GGJ 2020 (Photo: Ross Hersemann, IGDA) </figcaption></figure>
 
 I was on a team of four, which was either the <span name="not-solo">smallest or second-smallest team</span> at DePaul. Our group consisted of:
 
@@ -41,7 +41,7 @@ I was on a team of four, which was either the <span name="not-solo">smallest or 
 
 <ul><li><strong>Ryan Sizemore, </strong>3D artist/designer,</li><li><strong>Rob Goetz</strong>, lead programmer,</li><li><strong><a href="http://www.andreschamat.com">Andres Chamat</a></strong>, musician and sound designer,</li><li><strong>Me</strong>, jack-of-all-trades and rookie programmer</li></ul>
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/10160711/ateam.png" alt="" class="wp-image-421"/><figcaption>The assembled team</figcaption></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/10160711/ateam.png" alt=""><figcaption>The assembled team</figcaption></figure>
 
 We got the prompt: "Repair," and sorted out some logistics. And then it was time to make a game!
 
@@ -61,7 +61,7 @@ And then we were off. Andres and Ryan began cranking out the game assets, while 
 
 On the asset side of the house, Ryan and Andres knocked it out of the park. Andres, who worked from his home studio for most of the jam, put together a series of classic dungeon themes, perfect for the tense crawl/campy eighties game vibe we were going for. Ryan mixed and matched publicly available assets with his own creations; the look and feel of the game is all due to him:
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://globalgamejam.org/amazons3/image-derivative/ggj/styles/game_content__normal/games/screenshots/2020/02/290072/1.png?itok=q-LOfMtu&amp;timestamp=1580661094" alt="" width="458" height="326"/><figcaption>Screenshot from Tux Repair</figcaption></figure></div>
+<figure><img src="https://globalgamejam.org/amazons3/image-derivative/ggj/styles/game_content__normal/games/screenshots/2020/02/290072/1.png?itok=q-LOfMtu&amp;timestamp=1580661094" alt="" width="458" height="326"/><figcaption>Screenshot from Tux Repair</figcaption></figure>
 
 On the programming side of things, it's safe to say Rob carried the team. Using a combination of JavaScript chops and Google-fu, Rob figured out how to directly load maps built in Tiled, create events and behaviors for the various game entities, and even get the sound effects and some of the animations working. He had to pull an all-nighter on Saturday, but doing so made it so we had a game to turn in and present.
 
@@ -86,31 +86,31 @@ Finally, though, I got my UI connected to the game, and was successfully using <
 I needed to write a timer that restarted every time a new hero appeared in the dungeon. While the timer was actually a game element and not a UI element, I needed it in place if I was going to ship a working UI. Since Rob was occupied making the game actually work, I took a crack at it.
 
 Quick game development lesson: all game engines have an <code>update()</code> function, which contains a set of instructions the game runs prior to drawing a new frame on screen. So in pseudo code, every time your screen refreshes, your game engine is doing something like:
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">// example pseudocode...
-function update() { 
-    getPlayerInfo(); 
-    getEnemyInfo(); 
-    calculatePhysics(); 
-    updateUI(); 
-    // ... 
+<pre><code>// example pseudocode...
+function update() {
+    getPlayerInfo();
+    getEnemyInfo();
+    calculatePhysics();
+    updateUI();
+    // ...
 
     render(); 
-}</pre>
+}</code></pre>
 So you need a timer that counts down and then triggers something (e.g., a timer reset) every X number of seconds. How would you do it?
 
 The obvious solution is to simply increment a counter every frame, and when it hits X seconds, do the thing:
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">// assuming 60fps
+<pre><code>// assuming 60fps
 int frameCount;
 
-function update() { 
+function update() {
     frameCount++;
-    checkTimer(); 
+    checkTimer();
 }
 
 function checkTimer() {
     if (frameCount &gt;= 600) // 60fps * 10 sec = 600 frames
         // DO THE THING
-}</pre>
+}</code></pre>
 There's an issue here, though: not everyone's monitor refreshes at 60fps. Some people refresh faster (gamers often have 144Hz monitors); folks on crappy PCs will refresh slower. A person's hardware should not directly affect how the game runs.
 
 So we need a timer. And to write a timer in Phaser, you need to use <em>callbacks</em>.
@@ -122,7 +122,7 @@ So we need a timer. And to write a timer in Phaser, you need to use <em>callback
 A callback, I now know, is just a function passed to another function as an argument. The first function runs the second function as part of its routine. Which is perfect, because we can set rules on if/when the second function executes.
 
 And, as it turned out, Phaser has built-in support for managing game time. So creating a timer was as simple as launching the level with a function that would callback a function every second:
-<pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="enlighter">function create() {    
+<pre><code>function create() {
     // ...
 
     var timedEvent = this.time.addEvent({
@@ -140,7 +140,7 @@ function onEvent() {
     world.newHero(); // create new adventurer
     timer = world.heroTime; // reset timer
   }
-}</pre>
+}</code></pre>
 And that was it. Callbacks!
 
 In terms of return, callbacks have got to be one of the most useful tools I picked up at the GGJ. I've since implemented callbacks in a number of places in my personal video game project, and they solved a lot of issues I was trying to resolve.
@@ -159,9 +159,9 @@ I poured over the Phaser docs, forum posts, StackOverflow, looking for something
 
 I got the bar working, and showing, and finally relaxed... only to panic when it disappeared and no one could bring it back. It was a puzzle we did not solve in time, forcing Rob to use an older UI build where some of the sprite textures were broken in order for us to have a working game. 
 
-The issue? I had zoomed the camera in to improve the feel of the game... which zoomed it in past the UI. 
+The issue? I had zoomed the camera in to improve the feel of the game... which zoomed it in past the UI.
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/09150152/3a116884945f870924f1ffd3f36fc0151.png" alt="" class="wp-image-405" width="204" height="240"/></figure></div>
+<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/02/09150152/3a116884945f870924f1ffd3f36fc0151.png" alt="" width="204" height="240"/></figure>
 
 <h2>Wrapping Up</h2>
 

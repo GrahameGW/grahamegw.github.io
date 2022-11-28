@@ -39,39 +39,42 @@ There are a number of free-tier eligible machines available; we want the one cal
 
 AWS will prompt you to select a key pair. We're going to create a new key pair; name your pair and press the <strong>Download</strong> button to save the private key.
 
-![Download Private Key](https://cdn.grahamewatt.com/wp-content/uploads/2019/11/16110224/image-300x213.png)
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/16110224/image-300x213.png" alt="Download Private Key">
+</figure>
 
 <strong>DO NOT LOSE YOUR PRIVATE KEY!</strong> Our private key file is essentially our password; we need it to log into our instance. Save it in a safe place; if you do lose it you'll lose access to your website infrastructure and will need to build everything over again.
 
-Your instance will spend a few minutes booting up and configuring itself. You can watch it from the EC2 dashboard. When it's ready, you'll be able to get its IP address, which will allow you to see it from anywhere on the internet. 
+Your instance will spend a few minutes booting up and configuring itself. You can watch it from the EC2 dashboard. When it's ready, you'll be able to get its IP address, which will allow you to see it from anywhere on the internet.
 
-<h2>Connecting to your EC2 instance</h2>
+## Connecting to your EC2 instance
 
-The next step is to connect to your new instance. I've always used PuTTY to do so, but with the recent Windows update that installs <a href="https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/">OpenSSH by default</a> you can also connect via the command line. We'll cover both in this section. 
+The next step is to connect to your new instance. I've always used PuTTY to do so, but with the recent Windows update that installs <a href="https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/">OpenSSH by default</a> you can also connect via the command line. We'll cover both in this section.
 
 If you've already been through <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part One</a> and have downloaded the PuTTY client, go ahead and boot it up via the start menu.
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26135621/Annotation-2019-11-26-135557-300x273.jpg"/>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26135621/Annotation-2019-11-26-135557-300x273.jpg" class="faint-border"/>
     <figcaption>The PuTTY client</figcaption>
 </figure>
-
 
 There are a LOT of options and features in PuTTY, but we don't need the vast majority of them. All we need to do is provide a username, our EC2's IP address, and our private key, and we're good to go.
 
 The username and IP address are easy. If you used the Ubuntu AMI, AWS defaults the username to "ubuntu". You can find the IP address in the EC2 instance dashboard, under the <strong>IPv4 Public IP </strong>heading. Both of these go into the <strong>Host Name</strong> field using the following format:
 
-<p class="has-text-align-center"><em>username@IPaddress</em>
+<em>username@IPaddress</em>
 
-Which will look something like: 
+Which will look something like:
 
-<p class="has-text-align-center"><em>ubuntu@4.52.32.101</em>
+<em>ubuntu@4.52.32.101</em>
 
 Lastly, we need to add our private key. We do that by going to the <strong>Auth </strong>tab in the Category menu (under Connection/SSH). The default settings can be left the same, but when we press the <strong>Browse</strong> button to add our key and navigate to the folder we stored it in, we find we can't actually use it. What gives?
 
-It turns out AWS provides keys using the .<em>pem</em> format, but PuTTY only accepts the .<em>ppk</em> format. Luckily, PuTTY provides a tool as part of the installation process called PuTTYGen that will translate for us. Open it up, press the <strong>Load</strong> button to find &amp; convert your key, and then <strong>Save Private Key</strong> to save the new version. PuTTYGen will complain about a passphrase, which you can add or not as you prefer, and then save it.
+It turns out AWS provides keys using the <em>.pem</em> format, but PuTTY only accepts the <em>.ppk</em> format. Luckily, PuTTY provides a tool as part of the installation process called PuTTYGen that will translate for us. Open it up, press the <strong>Load</strong> button to find &amp; convert your key, and then <strong>Save Private Key</strong> to save the new version. PuTTYGen will complain about a passphrase, which you can add or not as you prefer, and then save it.
 
-![PuTTYGen](https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26141457/Annotation-2019-11-26-141229-300x67.png)
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26141457/Annotation-2019-11-26-141229-300x67.png" alt="PuTTYGen">
+</figure>
 
 Back in PuTTY, add the new <em>.ppk</em> key and head back to the <strong>Session</strong> tab. You can save your login credentials by filling out the <strong>Saved Sessions</strong> field and pressing the <strong>Save</strong> button, which will keep you from having to fill everything out every single time. Once saved, <strong>Open</strong> the session to begin connecting...
 
@@ -90,51 +93,56 @@ First, we need to make a hole for our SSH traffic to enter through. Delete the d
 We have now opened a hole in the firewall we can connect through. Save the new rules and try to connect again. This time, it should work:
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26144742/A384F8FA-30E9-418A-8F88-27EB05E64295-300x177.png" alt="" class="wp-image-214"/>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26144742/A384F8FA-30E9-418A-8F88-27EB05E64295-300x177.png" alt=""/>
     <figcaption>Et voila!</figcaption>
 </figure>
 
-Let's go ahead and add a few more rules while we're in here. We're going to need to allow web traffic from anywhere once we get our website running, so we need to add an <span name="http-allows">HTTP and HTTPS rule</span> that allows all traffic. If you're someone who works from a few locations, you'll also need to add additional SSH rules to include the IP addresses of your <span name="other-networks">other networks.</span> I wouldn't recommend allowing SSH connections from anywhere as you leave your EC2 instance accessible to SSH attempts from anywhere in the world. If you're the kind of person who lives on Starbucks &amp; hotel wi-fi, look into getting a VPN service and allowing SSH from the VPN's IP address instead.
+Let's go ahead and add a few more rules while we're in here. We're going to need to allow web traffic from anywhere once we get our website running, so we need to add an <span name="http-allows">HTTP and HTTPS rule</span> that allows all traffic. If you're someone who works from a few locations, you'll also need to add additional SSH rules to include the IP addresses of your other networks. I wouldn't recommend allowing SSH connections from anywhere as you leave your EC2 instance accessible to SSH attempts from anywhere in the world. If you're the kind of person who lives on <span name="other-networks">Starbucks &amp; hotel wi-fi,</span> look into getting a VPN service and allowing SSH from the VPN's IP address instead.
 
 <aside name="http-allows">We need to allow HTTP traffic as people will come via insecure connections whether we want them to or not. We'll redirect them to HTTPS once they arrive</aside>
 <aside name="other-networks">Office, parents', girl/boyfriend's, that one guy you met in line at the deli, etc.</aside>
 
-![firewall rules](https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26152719/Annotation-2019-11-26-143620-1024x337.jpg)
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26152719/Annotation-2019-11-26-143620-1024x337.jpg" alt="firewall rules" class="faint-border">
+</figure>
 
-<h3>Connecting via the command line</h3>
+### Connecting via the command line
 
-<em><strong>NOTE: </strong>Even if you're not interested in using the CLI to connect to your instance and prefer to stick with PuTTY, if you are a complete newbie to shell commands it's worth reading this section as we'll cover a few basic shell commands you'll need moving forward.</em>
+<em><strong>NOTE:</strong> Even if you're not interested in using the CLI to connect to your instance and prefer to stick with PuTTY, if you are a complete newbie to shell commands it's worth reading this section as we'll cover a few basic shell commands you'll need moving forward.</em>
 
-An alternate method for connecting to your instance uses the <strong>Command Line Interface</strong> (CLI) and <a href="https://www.openssh.com/">OpenSSH</a>, an open-source SSH tool that comes default with Linux, Mac, and even Windows 10 machines. If your computer doesn't have OpenSSH, it's worth getting--the utility also comes with secure copy (scp) and secure FTP (sFTP), which are both quite handy to have in a pinch. 
+An alternate method for connecting to your instance uses the <strong>Command Line Interface</strong> (CLI) and <a href="https://www.openssh.com/">OpenSSH</a>, an open-source SSH tool that comes default with Linux, Mac, and even Windows 10 machines. If your computer doesn't have OpenSSH, it's worth getting--the utility also comes with secure copy (scp) and secure FTP (sFTP), which are both quite handy to have in a pinch.
 
 To use OpenSSH, open up your preferred CLI interface. The default program on Macs is called Terminal; Windows have both Command Prompt and Powershell; I use PowerShell as it has a lot more support and a few nice features that make things a little more manageable when using it. You'll be greeted with a line of text that looks something like this:
 
-![opening powershell](https://cdn.grahamewatt.com/wp-content/uploads/2019/11/27100835/Annotation-2019-11-27-100816.jpg)
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/27100835/Annotation-2019-11-27-100816.jpg" alt="opening powershell">
+</figure>
 
 The line where you're cursor is blinking shows the folder you're currently in. <code>C:\Users\Grahame</code> can be navigated to via the File Explorer and we can see all the folders within the <code>Grahame</code> folder. We can also use the command line to see what files are in the <code>Grahame</code> folder. Type the following into the command line and press enter:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ ls</pre>
+<pre><code>$ ls</code></pre>
 
 You should see a list of all the files and folders in your current folder. Excellent! You can change folders using the <code>cd</code> command. For example, to change into the <code>Videos</code> folder, I type
 
-<span name="cd"><pre class="EnlighterJSRAW" data-enlighter-language="shell" data-enlighter-theme="enlighter">$ cd Videos</pre></span>
+<pre><code><span name="cd">$ cd Videos</span>
+</code></pre>
+
 <aside name="cd">cd stands for "change directory"</aside>
+
 and here we are. My cursor is now blinking next to <code>C:\Users\Grahame\Videos</code> and I can now run commands in the <code>Videos</code> folder.
 
 You can jump directly to a specific folder by following <code>cd</code> with the path name of the folder you want to access. We need to find our private key, so use <code>cd</code> to travel through your folders until you reach the folder with your key. Once you reach the right folder, use <code>ls</code> again to confirm the key is there, and then check that OpenSSH is installed and running properly by using the <code>ssh</code> command:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ ssh</pre>
+<pre><code>$ ssh</code></pre>
 
 If OpenSSH is properly installed, you'll be presented with a list of command flags: <code>-b</code>, <code>-c</code>, <code>-D</code>, etc. The command flags allow us to modify a command and pass it additional parameters and information. To use OpenSSH with a key file, we need to pass it the <code>-i</code> flag with the name of our private key (including the <code>.pem</code>). We'll use the same <code>host@IPADDRESS</code> path for our connection, and we'll let OpenSSH handle the rest as the defaults are good enough for us. So our command is:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ ssh ubuntu@IPADDRESS -i private_key.pem</pre>
+<pre><code>$ ssh ubuntu@IPADDRESS -i private_key.pem</code></pre>
 
 If it works, you'll connect to your EC2 instance (you may have to accept a warning about your certificate identity), and we'll be good to go.
 
-<h2>I'm in! Now what?</h2>
+## I'm in! Now what?
 
 We now have a running EC2 instance we can securely connect to. We can run shell commands within the instance the same way we can on our local machine. And we can control the AWS security groups to change the flow of traffic to and from our instance.
 
 In Part 3, we will configure our EC2 instance to serve as our web host, and configure our DNS so that we can use a domain name instead of an IP address to reach our website.
-
-<a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-3-nginx/">Part 3: NGINX</a>

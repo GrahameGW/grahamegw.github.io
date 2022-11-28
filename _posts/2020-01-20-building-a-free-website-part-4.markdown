@@ -5,7 +5,7 @@ date:   2020-01-20 16:11 -0700
 tags:   Projects Tech
 ---
 
-<span style="font-style:italic">This article was previously titled "Part 4: MySQL, Amazon RDS, and PHP"</span>
+<span style="font-style: italic; font-size: 0.8rem; line-height: 0.5rem">This article was previously titled "Part 4: MySQL, Amazon RDS, and PHP." We set up a second instance for a database to power our site, which is likely overkill. I recommend you read the [Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %}) before proceeding&mdash;most readers will find it more prudent to follow the instructions laid out over there.</span>
 
 AWS can be used for so many things. A person could spend a lifetime playing with all the different tools they make available to you in the cloud. But you ain't got time for that, so read on for part four of my series on setting up a website using only free infrastructure. We'll be getting a database set up to power the Wordpress CMS with, the final piece of groundwork necessary  to launch our site.
 
@@ -47,13 +47,16 @@ Under config, review the default settings. If this is your first time with AWS, 
 
 <aside name="too-advanced">But if you're advanced enough to have multiple VPCs, why are you reading this series?</aside>
 
-<blockquote class="wp-block-quote"> A <strong>virtual private cloud</strong> (VPC), is best thought of as a room in a house. Everyone in the room can see and speak with one another, but they cannot see and speak with folks in other rooms without opening windows and doors. In this analogy, our various instances will be able to see and speak with one another since they are part of the same VPC, but if we launched another EC2 instance in a different VPC, we would not be able to connect the instances without some extra networking work. The analogy breaks down somewhat when you start hosting VPCs within VPCs, but hopefully the main concept is clear. You gotta share a cloud with someone to talk to it.</blockquote>
+<blockquote> A <strong>virtual private cloud</strong> (VPC), is best thought of as a room in a house. Everyone in the room can see and speak with one another, but they cannot see and speak with folks in other rooms without opening windows and doors. In this analogy, our various instances will be able to see and speak with one another since they are part of the same VPC, but if we launched another EC2 instance in a different VPC, we would not be able to connect the instances without some extra networking work. The analogy breaks down somewhat when you start hosting VPCs within VPCs, but hopefully the main concept is clear. You gotta share a cloud with someone to talk to it.</blockquote>
 
 I also give my database access to the same security groups as my EC2 instance so I don't have issues later because I forgot to poke holes in my security group. I think this is technically not best practice, but in reality if an attacker got this far we're completely pwned anyway, so it doesn't matter too much.
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25123016/rds-security-config-817x1024.jpg" alt="" class="wp-image-296" width="570" height="714"/><figcaption>The goal. Make sure to also add your EC2 instance security group along with the default one.</figcaption></figure></div>
+<figure>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25123016/rds-security-config-817x1024.jpg" alt="" width="570" height="714"/>
+    <figcaption>The goal. Make sure to also add your EC2 instance security group along with the default one.</figcaption>
+</figure>
 
-You can set some <strong>additional configuration</strong> preferences as suit you. I turned on <strong>error log</strong> and <strong>general log</strong>, left <strong>auto backup</strong> and <strong>auto minor version upgrade </strong>enabled, and turned on <strong>deletion protection</strong>. 
+You can set some <strong>additional configuration</strong> preferences as suit you. I turned on <strong>error log</strong> and <strong>general log</strong>, left <strong>auto backup</strong> and <strong>auto minor version upgrade </strong>enabled, and turned on <strong>deletion protection</strong>.
 
 Also buried in the additional configuration preferences is the <strong>Initial database name</strong> field. You must set this! We can in theory do this later, but it's easier to do it now
 
@@ -71,23 +74,23 @@ It's a little weird, but essentially your database sends traffic out into the VP
 
 We're going to run WordPress in our EC2 instance, so SSH back into your web server. Since we set up our database to run MySQL, we'll need to install the appropriate software on our web server so we can issue the database commands. It's one line:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ sudo apt install mysql-server</pre>
+<pre><code>$ sudo apt install mysql-server</code></pre>
 
 MySQL installed! On to the next thing!
 
 Well, not really. The installation is up and active, but there are some security issues we should spend a moment fixing. Run the included security script:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ sudo mysql_secure_installation</pre>
+<pre><code>$ sudo mysql_secure_installation</code></pre>
 
 Respond <strong>yes </strong>(<code>y</code>) to everything until presented with the password policy validation menu:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">There are three levels of password validation policy: 
+<pre><code>There are three levels of password validation policy: 
 
 LOW Length &gt;= 8 
 MEDIUM Length &gt;= 8, numeric, mixed case, and special characters 
 STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary file 
 
-Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 1</pre>
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG:</code></pre>
 
 If you entered a strong password earlier, you should be able to enter <strong>2</strong>. Otherwise, select whatever tier is appropriate. The script will ask you to set the password; go ahead and retype your database password. Continue spamming  <code>y</code> until the script completes.
 
@@ -95,12 +98,12 @@ If you entered a strong password earlier, you should be able to enter <strong>2<
 
 One of the upsides of NGINX is the fact it comes completely stripped out, keeping it lightweight and free of bloat. In this case, it's also a minor downside--NGINX cannot understand PHP programs since it lacks a PHP processor. However, it's a simple enough install to get the necessary package, <code>php-fpm</code>. While we're at it, let's go ahead and add the PHP MySQL extension, <code>php-mysql</code>. We'll need it later.
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ sudo apt install php-fpm php-mysql</pre>
+<pre><code class="language-shell">$ sudo apt install php-fpm php-mysql</code></pre>
 
 And everything is installed! However, we still need to tell NGINX that it now has the ability to process PHP. So we're headed back to our handy-dandy config file:
 
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">$ sudo nano /etc/nginx/sites-available/mywebsite.com</pre>
+<pre><code class="language-shell">$ sudo nano /etc/nginx/sites-available/mywebsite.com</code></pre>
 
 We need to make the following changes:
 
@@ -108,7 +111,7 @@ We need to make the following changes:
 
 Our new configuration should look like this:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">server {
+<pre><code>server {
         listen 80 default_server;
         root /var/www/mywebsite.com;
 
@@ -134,21 +137,21 @@ Our new configuration should look like this:
 &nbsp;	access_log /var/www/mywebsite.com/logs/access.log;&nbsp;
         error_log /var/www/mywebsite.com/logs/error.log;
 }
-</pre>
+</code></pre>
 
 Test for typos with <code>sudo nginx -t</code>, save, and reload nginx with <code>sudo service nginx reload</code>.
 
 We can test that PHP was successfully stalled by creating a quick info page. Create a new file in your <code>/var/www/mywebsite.com</code> folder called <code>test.php</code> and put the following in it:
 
-<pre class="EnlighterJSRAW" data-enlighter-theme="enlighter">&lt;?php
-phpinfo();</pre>
+<pre><code>&lt;?php
+phpinfo();</code></pre>
 
 Save the file and then navigate in your browser to <code>mywebsite.com/test.php</code>. If all is well, you should be greeted with the following info page:
 
-<figure class="wp-block-image size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25160404/php-splash-1024x451.jpg" alt="" class="wp-image-306" width="592" height="261"/></figure>
+<figure class="wp-block-image size-large is-resized">
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25160404/php-splash-1024x451.jpg" alt="" width="592" height="261"/>
+</figure>
 
 That's it! The LEMP has been launched! An open source miracle has occurred!
 
 Well, sort of. But our infrastructure is now fully configured and ready for us to set up WordPress. In Part 5 we'll investigate just how to set up WordPress so it can use our networked RDS instance and our EC2 LEMP server, take care of security issues &amp; install SSL certificates, and set up a private CDN using AWS s3 and CloudFront.
-
-<a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-5-wordpress/">Part 5: WordPress</a>

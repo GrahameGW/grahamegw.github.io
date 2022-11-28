@@ -5,6 +5,7 @@ date:   2019-11-06 12:00 -0700
 tags:   C# Puzzles
 ---
 ## Problem
+
 Two tortoises named *A* and *B* must run a race. *A* starts with an average speed of 720 feet per hour. Young *B* knows she runs faster than *A*, and furthermore has not finished her cabbage.
 
 When she starts, at last, she can see that *A* has a 70 feet lead but *B*‘s speed is 850 feet per hour. How long will it take *B* to catch *A*?
@@ -26,6 +27,6 @@ The result will be an array `[hour, min, sec]` which is the time needed in hours
     int[] time = new int[] {hr, min, sec};
     return time;
   }
-    
+
   return null;
 }</code></pre>

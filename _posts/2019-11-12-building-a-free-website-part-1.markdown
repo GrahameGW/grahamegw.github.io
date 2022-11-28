@@ -6,7 +6,7 @@ tags:   Projects Tech
 ---
 I have a website! And not just any website. One with my name on it. One where I totally unnecessarily configured every square inch of it. One that is totally overkill for what it's actually being used for. But it uses entirely <span name="almost-free">free</span> infrastructure, thanks to the magic of AWS free tier infrastructure. Will it be free forever? No. But I currently save $9-10/month on hosting costs, and learned a bunch of cool new skills in the process.
 
-<aside name="almost-free">Almost. Occasionally there's about $1/month in overages, and the <a href="https://grahamewatt.com">grahamewatt.com</a> domain cost $12 when I originally purchased it.</aside> 
+<aside name="almost-free">Almost. Occasionally there's about $1/month in overages, and the <a href="/">grahamewatt.com</a> domain cost $12 when I originally purchased it.</aside> 
 
 In this series, I'm going to cover how to set up your own "free" website on AWS. We'll get a site set up exactly as this one is. <a href="https://grahamewatt.com">grahamewatt.com</a> runs using LEMP infrastructure (<strong>L</strong>inux, <span name="e-for-engine"><strong>N</strong>GINX,</span> <strong>M</strong>ySQL, <strong>P</strong>HP) on EC2, s3, and RDS, using CloudFront for its CDN and Wordpress for its CMS.
 <aside name="e-for-engine">It's "E" for "eNGINe - X".</aside>
@@ -17,19 +17,32 @@ In this series, I'm going to cover how to set up your own "free" website on AWS.
 [Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
 [Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
-<h2>Getting Started</h2>
-
+## Getting Started
 
 To build a similar site, you will need the following:
-
-<ul><li>AWS Account (sign up for free at aws.amazon.com)</li><li>A domain <ul><li>I purchased mine from Google Domains, but AWS also resells domains (which will allow you to save yourself a little bit of time editing nameservers). If you want a vanity domain (.blog, .tv, .fm, etc.) you may have to check a few different registrars to figure out who sells those domains. </li></ul></li><li>SSH client <ul><li>I use <a href="https://www.putty.org/">PuTTY</a> but anything will work.</li></ul></li><li>FTP client<ul><li>I use <a href="https://filezilla-project.org/">FileZilla</a>. Use whatever you want.</li></ul></li><li>Patience<ul><li>In my experience, it is a rare tutorial that works flawlessly end-to-end first go. And even when they do, it is far too easy to accidentally misread or skip a step, and then be very confused. Networking is also just...frustrating sometimes, so be patient and you will get there. I believe in you.</li></ul></li></ul>
+<ul>
+    <li>AWS Account (sign up for free at aws.amazon.com)</li>
+    <li>A domain 
+        <ul><li>I purchased mine from Google Domains, but AWS also resells domains (which will allow you to save yourself a little bit of time editing nameservers). If you want a vanity domain (.blog, .tv, .fm, etc.) you may have to check a few different registrars to figure out who sells those domains. </li></ul>
+    </li>
+    <li>SSH client
+        <ul><li>I use (PuTTY)[https://www.putty.org/] but anything will work.</li></ul>
+    </li>
+    <li>FTP client
+        <ul><li>I use <a href="https://filezilla-project.org/">FileZilla</a>. Use whatever you want.</li></ul>
+    </li>
+    <li>Patience
+        <ul><li>In my experience, it is a rare tutorial that works flawlessly end-to-end first go. And even when they do, it is far too easy to accidentally misread or skip a step, and then be very confused. Networking is also just...frustrating sometimes, so be patient and you will get there. I believe in you.
+        </li></ul>
+    </li>
+</ul>
 
 Once you've got all your tools, it's time to dive in.
 
-<h2>System Overview</h2>
+## System Overview
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/12120608/image1-1024x1024.png" /><figcaption>General infrastructure diagram</figcaption>
+    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/12120608/image1-1024x1024.png" class="faint-border"/><figcaption>General infrastructure diagram</figcaption>
 </figure>
 
 This is what we're building. It looks fairly messy (and the stack isn't exactly correct) but it's actually not too bad. Here's what's happening:
@@ -48,6 +61,7 @@ This is what we're building. It looks fairly messy (and the stack isn't exactly 
 That's the macro-level stuff on AWS. All of it is either free-tier eligible or just free forever (Route 53).  You can get by without S3 and CloudFront in this assembly, but they're not hard to get going.  There are also a couple of pieces of software running on our EC2 instance:
 
 <ul><li><strong>NGNIX</strong><ul><li>NGNIX is one of a couple popular web server technologies available out there. Perhaps slightly less common for a basic website than Apache server, I just happen to be more familiar with it due to some work I did using the video streaming plugin <a href="https://github.com/arut/nginx-rtmp-module">NGINX-RTMP</a> so it's my default server of choice. </li></ul></li><li><strong>Wordpress</strong><ul><li>Our content management system (CMS). Far and away the most popular choice of CMS for websites great and small. Wordpress makes it easy to create or modify custom themes, build new web pages, start a blog, the works. </li></ul></li><li><strong>Certbot</strong> (not pictured)<ul><li>Free, auto-renewing SSL certificates. <span name="https-everywhere">SSL is the "S" at the end of HTTPS,</span> and makes that little padlock appear in your address bar on any site properly maintained. There is literally no reason in this day and age to not have an HTTPS connection when browsing the web.</li></ul></li>
+
 <aside name="https-everywhere">The browser plugin <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a> is also something I highly recommend to help improve your web security.</aside>
 
 <li><strong>TiddlyWiki</strong> (&amp; NodeJS)<ul><li>Not relevant for this series, but it's a cool piece of software that does well as a wiki or personal notes system. I included it in the diagram to show an example of how port forwarding works and also to give it a plug because I really like it. Check it out at <a href="https://tiddlywiki.com/">tiddlywiki.com</a></li></ul></li></ul>
