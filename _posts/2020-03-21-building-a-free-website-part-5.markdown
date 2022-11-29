@@ -8,7 +8,7 @@ You've made it this far. I've made it this far. We've made it this far together.
 
 Welcome to the final installment of Building a Free Website. We have a database, we have a server, and we've connected them all up. Now the time has come to install WordPress and launch our free site for the world to see. We'll also take care of some security things and set up our very own CDN.
 
-<figure><img src="https://iristech.co/wp-content/uploads/2018/04/blue-light-glowing.jpg" alt="" width="384" height="261"/><figcaption>*epic music plays*</figcaption></figure>
+<figure><img src="/img/blue-light-glowing.jpg" alt="" width="384" height="261"/><figcaption>*epic music plays*</figcaption></figure>
 
 As the series has progressed, we've gotten a bit more technical and I've tried to hold your hand a bit less. We'll be kicking that up a notch here as well.
 
@@ -33,7 +33,7 @@ $ tar -xzvf latest.tar.gz
 </code></pre>
 <code>wget</code> goes to the WordPress site and downloads the latest stable build of WordPress for us. We use <code>tar</code> to unzip the compressed archive file... and that's it. WordPress is installed!
 
-<figure><img src="https://www.staples-3p.com/s7/is/image/Staples/sp36619013_sc7?wid=512&amp;hei=512" alt="" width="256" height="256"/><figcaption>That was easy</figcaption></figure>
+<figure><img src="/img/easy-button.webp" alt="" width="256" height="256"/><figcaption>That was easy</figcaption></figure>
 
 <ul><li>If your EC2 instance doesn't have <code>wget</code>, you can install it with the following command: <code>apt install wget</code>.</li><li>You need to be a user with root access to download and install WordPress (and <code>wget</code>). Either prepend <code>sudo</code> to the previous commands or <code>sudo su root</code> before starting.</li></ul>
 
@@ -73,7 +73,7 @@ define('LOGGED_IN_KEY',    'FE&amp;-XI=v1l&lt;)v*K!(=6azJBDHT^o^d&lt;NjLys-D=4&a
 
 Save the file and restart NGINX. If everything is configured properly, you should now be able to go to your domain and you'll be greeted by the WordPress launcher page. Follow the steps and you'll have a WordPress site ready for configuration and launch!
 
-<figure><img src="https://images.theconversation.com/files/281623/original/file-20190627-76705-1uxqb1f.jpg?ixlib=rb-1.1.0&amp;q=45&amp;auto=format&amp;w=1200&amp;h=1200.0&amp;fit=crop" alt="" width="300" height="300"/></figure>
+<figure><img src="/img/fireworks.jpg" alt="" width="300" height="300"/></figure>
 
 From here, you can get started building your website. You can draft pages, download and install themes, write blog posts—the world is your oyster. However, stay with us—we're not quite done dotting our I's and crossing our T's just yet.
 
@@ -85,7 +85,7 @@ This is not the end of the world—after all, our website is public, so <span na
 
 <aside name="spying">While DNS requests aren't exactly public, due to the nature of how the internet works there are several third parties who handle web traffic, and have to see the to/from destination addresses in order to facilitate the request. Your ISP definitely tracks this info, and its safe to say there are probably a few other folks who do too</aside>
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/03/23125200/wp-login.jpg" alt="" width="358" height="384"/><figcaption>Oh snap!</figcaption></figure>
+<figure><img src="/img/wp-login.jpg" alt="" width="358" height="384"/><figcaption>Oh snap!</figcaption></figure>
 
 Yep. You sent your password unencrypted to your webserver when you logged into the admin portal at your mydomain.com/login page. The good news is you <span name="probably-ok">did not get your password stolen.</span> But this is a gap, and we need to plug it.
 
@@ -93,7 +93,11 @@ Yep. You sent your password unencrypted to your webserver when you logged into t
 
 Enter the <strong>Secure Socket Layer</strong> (SSL). Similar to the public key/private key method of authentication in use when we access our EC2 instance via PuTTY, setting up our website with a SSL certificate will allow our website and any visitors to conduct their browsing session via an encrypted channel (HTTPS), instead of sending things in plain text over the internet (HTTP).
 
-<figure><img src="/img/http-vs-https-comparison.png" alt="A graphic showing what it looks like when you use a password with an encrypted system versus a non-encrypted system." width="380" height="361"/><figcaption>Source: <a href="https://cheapsslsecurity.com/blog/http-vs-https-security-the-differences-between-these-protocols/">Savvy Security</a></figcaption></figure>
+<figure>
+    <img src="/img/http-vs-https-comparison.png" alt="A graphic showing what it looks like when you use a password with an encrypted system versus a non-encrypted system." width="380" height="361"/>
+    <figcaption>Source: <a href="https://cheapsslsecurity.com/blog/http-vs-https-security-the-differences-between-these-protocols/">Savvy Security</a>
+    </figcaption>
+</figure>
 
 SSL certificates are issued by a number of registrars, who are responsible for confirming the domain belongs to the requester and maintaining those lists and records. In the old days, companies would charge for this service (and most still do, especially for more <a href="https://www.liquidweb.com/blog/ssl-certificates/">advanced SSL certifications</a>). But in this modern day and age, we have <span name="support-letsencrypt"><a href="https://letsencrypt.org/#">Let's Encrypt</a>.</span>
 
@@ -142,7 +146,7 @@ Certbot will run, and will probably reload NGINX. Then it will be done, and will
 
 And that's it! Reload your site and you should see the little padlock in the browser bar that indicates success. You can also run security tests (Google SSL Server Test for a whole host of test) to see how your site stacks up.
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/03/24113447/image.png" alt=""/><figcaption>The mark of a job well done</figcaption></figure>
+<figure><img src="/img/https-lock.png" alt=""/><figcaption>The mark of a job well done</figcaption></figure>
 
 <h2>CloudFront CDN</h2>
 
@@ -169,10 +173,10 @@ Put your S3 bucket in <strong>Origin Domain Name</strong> and fill out an <stron
 <figure>
     <div class="img-row faint-border">
         <div class="img-column-50">
-            <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/04/12133922/image.png" alt="" height="373">
+            <img src="/img/cdn-settings-1.png" alt="" height="373">
         </div>
         <div class="img-column-50">
-            <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/04/12135726/image-3.png" alt="" height="301">
+            <img src="/img/cdn-settings-2.png" alt="" height="301">
         </div>
     </div>
     <figcaption>What we're going for</figcaption>
@@ -180,7 +184,7 @@ Put your S3 bucket in <strong>Origin Domain Name</strong> and fill out an <stron
 
 Our distribution will not launch without an SSL certificate to secure it. AWS will happily do this for us. Click the <strong>Request a Certificate with ACM</strong> button to launch the AWS Certificate Manager (ACM) in a new tab. The wizard is pretty straightforward; simply add our new <code>cdn.mydomain.com</code> domain, and click through to "Step 5: Validation" (we can leave the defaults alone). ACM will show our newly certified domain as "Pending." It will periodically check our DNS until it finds the CNAME record it provided. You can manually copy it over, or you can let AWS do the heavy lifting for you—expand the field and press the <strong>Add to Route 53</strong> button to automatically copy the record into the DNS. Doing so will also trigger another test by the ACM, so everything should all sync up in a matter of minutes.
 
-<blockquote class="wp-block-quote"><strong>Couldn't we have done this for our other SSL certificates?</strong> Sure, but it never hurts to learn two different ways of doing things. In addition, our method of using Certbot within our web server is applicable to cloud hosts and other hosts outside of AWS, and keeps our DNS records a little bit tidier.</blockquote>
+<blockquote><strong>Couldn't we have done this for our other SSL certificates?</strong> Sure, but it never hurts to learn two different ways of doing things. In addition, our method of using Certbot within our web server is applicable to cloud hosts and other hosts outside of AWS, and keeps our DNS records a little bit tidier.</blockquote>
 
 Once the SSL certificate moves from "Pending" to "Issued," go back to our CloudFront tab. Select <strong>Custom SSL Certificate</strong> and add our new certificate <span name="autofill">to the field.</span> Check everything over once more, and create the distribution. It'll take a few minutes to spin up, but we can move on while it does.
 
@@ -192,13 +196,13 @@ With the bucket and distribution set up, we need to make changes to our DNS so t
 
 We are in the home stretch. All the infrastructure has been set up. Our website now looks just like our diagram. All we have left to do is connect our website to S3, and for that we'll use <a href="https://wordpress.org/plugins/amazon-s3-and-cloudfront/">Offload Media Lite</a>.
 
-<figure class="wp-block-image size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/12120608/image1-1024x1024.png" alt="" class="wp-image-190"/></figure>
+<figure><img src="/img/architecture-diagram.png" alt=""/></figure>
 
 As with any WordPress plugin, we can download and install them directly to our website from within the WordPress CMS. Log into your website and open the <strong>Plugins</strong> page from the left menu to see your current plugins. WordPress automatically comes with a few defaults; you can explore, add, or remove them at your leisure.
 
 To get the Offload Media Lite plugin, press <strong>Add Plugin</strong> to visit the plugins catalog, and use the search function to find the plugin. Installation is easy as clicking <strong>Install Now</strong>—WordPress will automatically download and install the plugin for you. Once it's done, press <strong>Activate</strong> and refresh the page. If you check the <strong>Settings</strong> dropdown in the left menu, Offload Media Lite will have magically appeared, ready for configuration.
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/04/12153058/image-4.png" alt="" /><figcaption>Bam!</figcaption></figure>
+<figure><img src="/img/offload-plugin-in-menu.png" alt="" /><figcaption>Bam!</figcaption></figure>
 
 Open 'er up, and fill out the fields in the <strong>Media Library</strong> tab as follows:
 
@@ -206,7 +210,7 @@ Open 'er up, and fill out the fields in the <strong>Media Library</strong> tab a
 
 And turn all the switches to the "On" position. This will tell Offload Media Lite to move all files and images over to s3 whenever you upload them, organize them the same way WordPress would, and then remove them from your EC2 instance, saving space on our little hard drive.
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/04/12154625/image-5.png" alt="" width="373" height="672"/><figcaption>Settings here at grahamewatt.com</figcaption></figure>
+<figure><img src="offload-settings" alt="" width="373" height="672"/><figcaption>Settings here at grahamewatt.com</figcaption></figure>
 
 <em>"But wait! When I chose Amazon S3 for my storage provider, it said something about access keys?"</em>
 

@@ -40,7 +40,7 @@ There are a number of free-tier eligible machines available; we want the one cal
 AWS will prompt you to select a key pair. We're going to create a new key pair; name your pair and press the <strong>Download</strong> button to save the private key.
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/16110224/image-300x213.png" alt="Download Private Key">
+    <img src="/img/key-pair-menu.png" alt="Download Private Key">
 </figure>
 
 <strong>DO NOT LOSE YOUR PRIVATE KEY!</strong> Our private key file is essentially our password; we need it to log into our instance. Save it in a safe place; if you do lose it you'll lose access to your website infrastructure and will need to build everything over again.
@@ -51,10 +51,10 @@ Your instance will spend a few minutes booting up and configuring itself. You ca
 
 The next step is to connect to your new instance. I've always used PuTTY to do so, but with the recent Windows update that installs <a href="https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/">OpenSSH by default</a> you can also connect via the command line. We'll cover both in this section.
 
-If you've already been through <a href="https://grahamewatt.com/building-a-free-website-lemp-on-aws-part-1/">Part One</a> and have downloaded the PuTTY client, go ahead and boot it up via the start menu.
+If you've already been through [Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) and have downloaded the PuTTY client, go ahead and boot it up via the start menu.
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26135621/Annotation-2019-11-26-135557-300x273.jpg" class="faint-border"/>
+    <img src="/img/putty-client.jpg" class="faint-border"/>
     <figcaption>The PuTTY client</figcaption>
 </figure>
 
@@ -73,7 +73,7 @@ Lastly, we need to add our private key. We do that by going to the <strong>Auth 
 It turns out AWS provides keys using the <em>.pem</em> format, but PuTTY only accepts the <em>.ppk</em> format. Luckily, PuTTY provides a tool as part of the installation process called PuTTYGen that will translate for us. Open it up, press the <strong>Load</strong> button to find &amp; convert your key, and then <strong>Save Private Key</strong> to save the new version. PuTTYGen will complain about a passphrase, which you can add or not as you prefer, and then save it.
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26141457/Annotation-2019-11-26-141229-300x67.png" alt="PuTTYGen">
+    <img src="/img/key-save-menu.png" alt="PuTTYGen">
 </figure>
 
 Back in PuTTY, add the new <em>.ppk</em> key and head back to the <strong>Session</strong> tab. You can save your login credentials by filling out the <strong>Saved Sessions</strong> field and pressing the <strong>Save</strong> button, which will keep you from having to fill everything out every single time. Once saved, <strong>Open</strong> the session to begin connecting...
@@ -93,7 +93,7 @@ First, we need to make a hole for our SSH traffic to enter through. Delete the d
 We have now opened a hole in the firewall we can connect through. Save the new rules and try to connect again. This time, it should work:
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26144742/A384F8FA-30E9-418A-8F88-27EB05E64295-300x177.png" alt=""/>
+    <img src="/img/ubuntu-shell-aws.png" alt=""/>
     <figcaption>Et voila!</figcaption>
 </figure>
 
@@ -103,7 +103,7 @@ Let's go ahead and add a few more rules while we're in here. We're going to need
 <aside name="other-networks">Office, parents', girl/boyfriend's, that one guy you met in line at the deli, etc.</aside>
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/26152719/Annotation-2019-11-26-143620-1024x337.jpg" alt="firewall rules" class="faint-border">
+    <img src="/img/cloud-fw-rules.jpg" alt="firewall rules" class="faint-border">
 </figure>
 
 ### Connecting via the command line
@@ -115,16 +115,16 @@ An alternate method for connecting to your instance uses the <strong>Command Lin
 To use OpenSSH, open up your preferred CLI interface. The default program on Macs is called Terminal; Windows have both Command Prompt and Powershell; I use PowerShell as it has a lot more support and a few nice features that make things a little more manageable when using it. You'll be greeted with a line of text that looks something like this:
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/27100835/Annotation-2019-11-27-100816.jpg" alt="opening powershell">
+    <img src="/img/powershell-start.jpg" alt="opening powershell">
 </figure>
 
 The line where you're cursor is blinking shows the folder you're currently in. <code>C:\Users\Grahame</code> can be navigated to via the File Explorer and we can see all the folders within the <code>Grahame</code> folder. We can also use the command line to see what files are in the <code>Grahame</code> folder. Type the following into the command line and press enter:
 
-<pre><code>$ ls</code></pre>
+<pre><code class="language-shell">$ ls</code></pre>
 
 You should see a list of all the files and folders in your current folder. Excellent! You can change folders using the <code>cd</code> command. For example, to change into the <code>Videos</code> folder, I type
 
-<pre><code><span name="cd">$ cd Videos</span>
+<pre><code class="language-shell"><span name="cd">$ cd Videos</span>
 </code></pre>
 
 <aside name="cd">cd stands for "change directory"</aside>
@@ -133,11 +133,11 @@ and here we are. My cursor is now blinking next to <code>C:\Users\Grahame\Videos
 
 You can jump directly to a specific folder by following <code>cd</code> with the path name of the folder you want to access. We need to find our private key, so use <code>cd</code> to travel through your folders until you reach the folder with your key. Once you reach the right folder, use <code>ls</code> again to confirm the key is there, and then check that OpenSSH is installed and running properly by using the <code>ssh</code> command:
 
-<pre><code>$ ssh</code></pre>
+<pre><code class="language-shell">$ ssh</code></pre>
 
 If OpenSSH is properly installed, you'll be presented with a list of command flags: <code>-b</code>, <code>-c</code>, <code>-D</code>, etc. The command flags allow us to modify a command and pass it additional parameters and information. To use OpenSSH with a key file, we need to pass it the <code>-i</code> flag with the name of our private key (including the <code>.pem</code>). We'll use the same <code>host@IPADDRESS</code> path for our connection, and we'll let OpenSSH handle the rest as the defaults are good enough for us. So our command is:
 
-<pre><code>$ ssh ubuntu@IPADDRESS -i private_key.pem</code></pre>
+<pre><code class="language-shell">$ ssh ubuntu@IPADDRESS -i private_key.pem</code></pre>
 
 If it works, you'll connect to your EC2 instance (you may have to accept a warning about your certificate identity), and we'll be good to go.
 

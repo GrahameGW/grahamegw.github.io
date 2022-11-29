@@ -9,7 +9,10 @@ tags:   Tech VR
 
 Virtual reality and augmented reality (VR/AR, collectively XR) technology seems to be in somewhat of a holding pattern. Even with everyone stuck inside thanks to the COVID-19 pandemic, there's not been a run on VR headsets the same way there has been for <a href="https://www.npr.org/2020/04/03/826945396/why-are-stores-are-running-low-on-toilet-paper-its-not-just-hoarding">toilet paper</a> and <a href="https://www.usatoday.com/story/money/2020/04/01/coronavirus-social-distancing-outdoor-toys-bounce-houses-sales-jump/2927397001/">trampolines</a>. It's not for lack of trying, but there are plenty of things the tech has yet to solve, both from a market perspective and from a technology perspective. VR/AR technology is expensive, it has a growing-but-still-limited amount of content, and the physical and computational requirements mean consumers have more to consider besides whether they want to play Final Soul Caliber Fantasy XXIV, DestinyTitanHalo 2, or Super Legend of Mario Multiverse Odyssey Quest.
 
-<div class="wp-block-image"><figure class="aligncenter is-resized"><img src="https://mlpnk72yciwc.i.optimole.com/cqhiHLc-iawppewp/w:588/h:392/q:75/https://www.bleedingcool.com/wp-content/uploads/2019/08/ps4-xbox-one-nintendo-switch.jpg" alt="Has the Console Wars Gone Stagnant? [OPINION]" width="294" height="196"/><figcaption>Pick your weapon</figcaption></figure></div>
+<figure>
+    <img src="/img/console-tricolor.webp" alt="Has the Console Wars Gone Stagnant? [OPINION]" width="294" height="196"/>
+    <figcaption>Pick your weapon</figcaption>
+</figure>
 
 The market forces VR/AR has to contend with are challenging. Benedict Evans does a good job covering them <a href="https://www.ben-evans.com/benedictevans/2020/5/8/the-vr-winter">in his latest essay</a>. <em>TL;DR</em>? VR/AR has yet to "cross the chasm;" it is a technology for people who are into cutting-edge tech, and it has yet to convince the rest of us it's more than a novelty. There is no Apple of VR (<a href="https://www.idropnews.com/news/apple-buys-san-diego-based-nextvr-in-hidden-100-million-deal/135932/">recent acquisitions notwithstanding</a>); VR does not "just work." Oculus, HTC, and the rest have come close, have taken the (Magic) leap, but no one has yet to land on the far side.
 
@@ -23,13 +26,15 @@ Have you ever tried to pick something up in VR and hold it close to your face? T
 
 This is the vergence-accommodation effect (or vergence-accommodation conflict, VAC) at work. What's happening? Let's start with a picture:
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/05/19130545/1_BRB4QLpT7bxA5QZN3d2xrA1-1024x810.jpeg" alt="" class="wp-image-642" width="512" height="405"/><figcaption>Hoffman et al., Journal of Vision 2008</figcaption></figure></div>
+<figure>
+    <img src="/img/vergence-diagram.jpeg" alt="" width="512" height="405"/><figcaption>Hoffman et al., Journal of Vision 2008</figcaption>
+</figure>
 
 Our eyes have evolved to allow us to control our focus (accommodation) independently of where we point our gaze (vergence). Your <span name="metaphor">brain's "software" adjusts them in tandem,</span> usually as an unconscious reflex, which keeps whatever you've decided to look at in focus. This reflex can be consciously controlled; if you've ever successfully looked at a "magic eye" autostereogram, you've detached your vergence reflex from your accommodation reflex.
 
 <aside name="metaphor">This is simplified, but the metaphor holds</aside>
 
-<figure class="wp-block-image"><img src="https://1.bp.blogspot.com/_cxmptAPYR-s/Rnv28F0TfmI/AAAAAAAABHQ/DbDkvL8LJNU/s1600/Stereogram+2.png" alt="[Stereogram+2.png]"/><figcaption>An autostereogram</figcaption></figure>
+<figure><img src="/img/Stereogram%202.png" alt="[Stereogram+2.png]"/><figcaption>An autostereogram</figcaption></figure>
 
 <span name="effort">Consciously controlling this reflex takes effort</span> since we're actively working against what our systems want to do. Your body wants to keep vergence and accommodation in sync so you can see properly, and it doesn't like it when it detects you doing something <span name="slacker-alarm">counterproductive.</span>
 
@@ -45,7 +50,7 @@ There's not an issue when looking at things in the distance, as the brain is... 
 
 There are several promising avenues of research into solving the vergence-accommodation effect. Each has its upsides and downsides, but the general consensus is that stereoscopic headsets aren't a long-term solution for VR, at least in the <em>Ready Player One</em> future that so many folks want to be a part of.
 
-<figure class="wp-block-image size-large"><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/05/19133840/image.png" alt="" class="wp-image-643"/><figcaption>Zabels, Osmanis et al. Applied Sciences 2019</figcaption></figure>
+<figure><img src="/img/AR-tech-comparisons.png" alt=""/><figcaption>Zabels, Osmanis et al. Applied Sciences 2019</figcaption></figure>
 
 The main avenues receiving money and research energy are split between software solutions, optical solutions (varifocals, multifocals), and what I'm calling <span name="name-needed">light solutions (light fields, holograms),</span> which include taking advantages of the properties of light to actually "create" 3D visuals. While plenty of demos of each have surfaced throughout tradeshows and in research papers, none of them are ready for primetime.
 

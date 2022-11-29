@@ -6,9 +6,9 @@ tags:   Projects Tech
 ---
 I have a website! And not just any website. One with my name on it. One where I totally unnecessarily configured every square inch of it. One that is totally overkill for what it's actually being used for. But it uses entirely <span name="almost-free">free</span> infrastructure, thanks to the magic of AWS free tier infrastructure. Will it be free forever? No. But I currently save $9-10/month on hosting costs, and learned a bunch of cool new skills in the process.
 
-<aside name="almost-free">Almost. Occasionally there's about $1/month in overages, and the <a href="/">grahamewatt.com</a> domain cost $12 when I originally purchased it.</aside> 
+<aside name="almost-free">Almost. Occasionally there's about $1/month in overages, and the <a href="/">grahamewatt.com</a> domain cost $12 when I originally purchased it.</aside>
 
-In this series, I'm going to cover how to set up your own "free" website on AWS. We'll get a site set up exactly as this one is. <a href="https://grahamewatt.com">grahamewatt.com</a> runs using LEMP infrastructure (<strong>L</strong>inux, <span name="e-for-engine"><strong>N</strong>GINX,</span> <strong>M</strong>ySQL, <strong>P</strong>HP) on EC2, s3, and RDS, using CloudFront for its CDN and Wordpress for its CMS.
+In this series, I'm going to cover how to set up your own "free" website on AWS. We'll get a site set up exactly as this one is. [grahamewatt.com](/) runs using LEMP infrastructure (<strong>L</strong>inux, <span name="e-for-engine"><strong>N</strong>GINX,</span> <strong>M</strong>ySQL, <strong>P</strong>HP) on EC2, s3, and RDS, using CloudFront for its CDN and Wordpress for its CMS.
 <aside name="e-for-engine">It's "E" for "eNGINe - X".</aside>
 
 [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
@@ -26,7 +26,7 @@ To build a similar site, you will need the following:
         <ul><li>I purchased mine from Google Domains, but AWS also resells domains (which will allow you to save yourself a little bit of time editing nameservers). If you want a vanity domain (.blog, .tv, .fm, etc.) you may have to check a few different registrars to figure out who sells those domains. </li></ul>
     </li>
     <li>SSH client
-        <ul><li>I use (PuTTY)[https://www.putty.org/] but anything will work.</li></ul>
+        <ul><li>I use <a href="https://www.putty.org/">PuTTY</a> but anything will work.</li></ul>
     </li>
     <li>FTP client
         <ul><li>I use <a href="https://filezilla-project.org/">FileZilla</a>. Use whatever you want.</li></ul>
@@ -42,7 +42,7 @@ Once you've got all your tools, it's time to dive in.
 ## System Overview
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2019/11/12120608/image1-1024x1024.png" class="faint-border"/><figcaption>General infrastructure diagram</figcaption>
+    <img src="/img/architecture-diagram.png" class="faint-border"/><figcaption>General infrastructure diagram</figcaption>
 </figure>
 
 This is what we're building. It looks fairly messy (and the stack isn't exactly correct) but it's actually not too bad. Here's what's happening:

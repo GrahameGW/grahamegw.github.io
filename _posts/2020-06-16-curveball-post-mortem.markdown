@@ -19,13 +19,13 @@ None of this required anything particularly complex to implement. In fact, my bi
 
 Perhaps the biggest challenge I had in programming was creating a competent AI. Initially, my plan was to implement a solution I had found on <a href="https://gamedev.stackexchange.com/a/57397">Stack Exchange</a>:
 
-<blockquote class="wp-block-quote">
-<p><strong>Invisible Ball AI</strong></p>
-<p><em>AI Setup:</em> When the ball reflects off your paddle, you know where it is and how fast it is going. Spawn an invisible ball at that point but at a greater speed. It will wind up where the visible ball is going. Each frame, have the AI move towards the location of the invisible ball. Stop the invisible ball once it reaches the AI's side, so it is where the AI should move its paddle.</p>
-
-<p><em>Results:</em> The AI looks like it's trying to predict the path of the ball. Say the player has reflected the ball at a steep angle so that it will bounce off a wall. The AI will track the ball down a little ways, and then—being slower than the ball—will fail to track it back up fast enough. You have tricked the AI, and it looks fairly logical from a human point of view. You can see the computer trying to predict where the ball will go, and then it moves—oh, it missed, it was too slow, and you have won a point.</p>
-
-<p>This is significantly better than inserting randomness, since it makes the AI look relatively intelligent. A worthy opponent. It also lets the AI play by the exact same rules as the human, which looks better to the player and makes your job easier.</p>
+<blockquote>
+    <p><strong>Invisible Ball AI</strong></p>
+    <p><em>AI Setup:</em> When the ball reflects off your paddle, you know where it is and how fast it is going. Spawn an invisible ball at that point but at a greater speed. It will wind up where the visible ball is going. Each frame, have the AI move towards the location of the invisible ball. Stop the invisible ball once it reaches the AI's side, so it is where the AI should move its paddle.</p>
+    <p><em>Results:</em> The AI looks like it's trying to predict the path of the ball. Say the player has reflected the ball at a steep angle so that it will bounce off a wall. The AI will track the ball down a little ways, and then—being slower than the ball—will fail to track it back up fast enough. You have tricked the AI, and it looks fairly logical from a human point of view. You can see the computer trying to predict where the ball will go, and then it moves—oh, it missed, it was too slow, and you have won a point.
+    </p>
+    <p>This is significantly better than inserting randomness, since it makes the AI look relatively intelligent. A worthy opponent. It also lets the AI play by the exact same rules as the human, which looks better to the player and makes your job easier.
+    </p>
 </blockquote>
 
 It took me a little bit, but I implemented this without too much difficulty... and it didn't work. The AI was good for a point or two, but then would seem to completely fly off the rails. What was going on?

@@ -47,12 +47,12 @@ Under config, review the default settings. If this is your first time with AWS, 
 
 <aside name="too-advanced">But if you're advanced enough to have multiple VPCs, why are you reading this series?</aside>
 
-<blockquote> A <strong>virtual private cloud</strong> (VPC), is best thought of as a room in a house. Everyone in the room can see and speak with one another, but they cannot see and speak with folks in other rooms without opening windows and doors. In this analogy, our various instances will be able to see and speak with one another since they are part of the same VPC, but if we launched another EC2 instance in a different VPC, we would not be able to connect the instances without some extra networking work. The analogy breaks down somewhat when you start hosting VPCs within VPCs, but hopefully the main concept is clear. You gotta share a cloud with someone to talk to it.</blockquote>
+<blockquote>A <strong>virtual private cloud</strong> (VPC), is best thought of as a room in a house. Everyone in the room can see and speak with one another, but they cannot see and speak with folks in other rooms without opening windows and doors. In this analogy, our various instances will be able to see and speak with one another since they are part of the same VPC, but if we launched another EC2 instance in a different VPC, we would not be able to connect the instances without some extra networking work. The analogy breaks down somewhat when you start hosting VPCs within VPCs, but hopefully the main concept is clear. You gotta share a cloud with someone to talk to it.</blockquote>
 
 I also give my database access to the same security groups as my EC2 instance so I don't have issues later because I forgot to poke holes in my security group. I think this is technically not best practice, but in reality if an attacker got this far we're completely pwned anyway, so it doesn't matter too much.
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25123016/rds-security-config-817x1024.jpg" alt="" width="570" height="714"/>
+    <img src="/img/rds-security-config.jpg" alt="" width="570" height="714"/>
     <figcaption>The goal. Make sure to also add your EC2 instance security group along with the default one.</figcaption>
 </figure>
 
@@ -74,21 +74,21 @@ It's a little weird, but essentially your database sends traffic out into the VP
 
 We're going to run WordPress in our EC2 instance, so SSH back into your web server. Since we set up our database to run MySQL, we'll need to install the appropriate software on our web server so we can issue the database commands. It's one line:
 
-<pre><code>$ sudo apt install mysql-server</code></pre>
+<pre><code class="language-shell">$ sudo apt install mysql-server</code></pre>
 
 MySQL installed! On to the next thing!
 
 Well, not really. The installation is up and active, but there are some security issues we should spend a moment fixing. Run the included security script:
 
-<pre><code>$ sudo mysql_secure_installation</code></pre>
+<pre><code class="language-shell">$ sudo mysql_secure_installation</code></pre>
 
 Respond <strong>yes </strong>(<code>y</code>) to everything until presented with the password policy validation menu:
 
-<pre><code>There are three levels of password validation policy: 
+<pre><code>There are three levels of password validation policy:
 
-LOW Length &gt;= 8 
-MEDIUM Length &gt;= 8, numeric, mixed case, and special characters 
-STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary file 
+LOW Length &gt;= 8
+MEDIUM Length &gt;= 8, numeric, mixed case, and special characters
+STRONG Length &gt;= 8, numeric, mixed case, special characters and dictionary file
 
 Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG:</code></pre>
 
@@ -101,7 +101,6 @@ One of the upsides of NGINX is the fact it comes completely stripped out, keepin
 <pre><code class="language-shell">$ sudo apt install php-fpm php-mysql</code></pre>
 
 And everything is installed! However, we still need to tell NGINX that it now has the ability to process PHP. So we're headed back to our handy-dandy config file:
-
 
 <pre><code class="language-shell">$ sudo nano /etc/nginx/sites-available/mywebsite.com</code></pre>
 
@@ -148,8 +147,8 @@ phpinfo();</code></pre>
 
 Save the file and then navigate in your browser to <code>mywebsite.com/test.php</code>. If all is well, you should be greeted with the following info page:
 
-<figure class="wp-block-image size-large is-resized">
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/01/25160404/php-splash-1024x451.jpg" alt="" width="592" height="261"/>
+<figure>
+    <img src="/img/php-splash.jpg" alt="" width="592" height="261"/>
 </figure>
 
 That's it! The LEMP has been launched! An open source miracle has occurred!

@@ -17,7 +17,7 @@ Powered by Macromedia (now Adobe) Flash, the internet was awash in games and car
 
 Some were awesome.
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093231/curveball-game-ss.png" alt=""/><figcaption>A classic</figcaption></figure>
+<figure><img src="/img/curveball-screenshot.png" alt=""/><figcaption>A classic</figcaption></figure>
 
 <a href="http://curveball-game.com">Curveball</a> was one of those games. Not much more than 3D Pong, it somehow managed to become one of the most played flash games of the late 90s. Not that Pong wasn't addictive in its time, but Curveball managed to shine in a world that was not just discovering video games for the first time. <span name="technical-spin">It's anyone's guess as to why,</span> but if I had to guess, I'd say it was the spin mechanic: by moving the paddle as the ball made contact with it, you could apply topspin to the ball, causing it to hook and bend like crazy. It felt realistic, it felt controllable, and it was SO MUCH FUN.
 
@@ -33,7 +33,7 @@ So I decided to build it myself. Over the last year or so, I've been teaching my
 
 The result? <a href="https://grahamewatt.com/games/corvebawl/">Corvebawl</a>:
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/16093116/corvebawl-ss2.png" alt=""/></figure>
+<figure><img src="/img/corvebawl-screenshot.png" alt=""/></figure>
 
 I'm <a href="https://grahamewatt.com/games/corvebawl/">hosting it here</a>, so please check it out and let me know what you like/dislike about it. If you're interested in playing around with the project yourself, I've uploaded the <a href="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/12132224/corvebawl.unitypackage">unitypackage</a> file for you to download.
 

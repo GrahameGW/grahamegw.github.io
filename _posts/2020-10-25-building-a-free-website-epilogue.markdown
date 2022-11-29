@@ -10,7 +10,7 @@ It feels like just a few weeks ago that I launched a free website, and shared th
 <aside name="steve-miller">INTO THE FUUUUTUREEEEE</aside>
 
 <figure>
-    <img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12095016/61QnNJiO7VL._SL1079_-300x300.jpg" alt="" />
+    <img src="/img/steve-miller-eagle-single.jpg" alt="" />
     <figcaption>Earworm deployed <em>(Image: Amazon.com)</em></figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Otherwise, let's do what we need to do now that <span name="wu-tang">money is on
 
 I'll be the first to admit, I was not expecting the price tag on my first full month out of Free Tier services:
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12100648/bill-1024x129.png" alt=""/><figcaption>Ooof...</figcaption></figure>
+<figure><img src="/img/aws-bill-slim.png" alt=""/><figcaption>Ooof...</figcaption></figure>
 
 $26 bucks? For a website I can set up at Bluehost or Hostgator for $10? And I don't have to spend time updating things?
 
@@ -46,7 +46,7 @@ Web hosting businesses all run off the same model (plus or minus): get a lot of 
 
 So I looked at the line items, and found the culprits:
 
-<figure><img src="https://cdn.grahamewatt.com/wp-content/uploads/2020/10/12102258/image-1-1024x468.png" alt=""/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
+<figure><img src="/img/aws-bill-expanded.png" alt=""/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
 
 I'm getting slammed by RDS (database) costs. My EC2 costs are higher than I'd like, as they're break even with web hosting services for the same product and zero of the services. But there's no point in addressing the EC2 item if we can't do something about RDS.
 
@@ -58,7 +58,7 @@ The extra features are great if you're running a SaaS app in the cloud, storing 
 
 There's a second point here that the additional costs of RDS also masks. AWS does pricing on "compute hours," which is calculated as:
 
-<blockquote class="wp-block-quote"><span name="pay-double"># of instances × # hours running</span></blockquote>
+<blockquote><span name="pay-double"># of instances × # hours running</span></blockquote>
 
 What this means is that if you run two instances, you pay double what you would pay for a single instance. Obvious in hindsight, but surprisingly easy to overlook if you're not paying attention.
 
