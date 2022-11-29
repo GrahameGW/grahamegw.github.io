@@ -229,6 +229,7 @@ blockquote code {
 .game-entry img {
     width: 180px;
     height: 150px;
+    object-fit: cover;
 }
 
 .game-description {
