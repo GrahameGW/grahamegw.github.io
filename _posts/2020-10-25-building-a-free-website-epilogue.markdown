@@ -32,7 +32,7 @@ Otherwise, let's do what we need to do now that <span name="wu-tang">money is on
 
 I'll be the first to admit, I was not expecting the price tag on my first full month out of Free Tier services:
 
-<figure><img src="/img/aws-bill-slim.png" alt=""/><figcaption>Ooof...</figcaption></figure>
+<figure><img src="/img/aws-bill-slim.png" alt="Too much money" class="faint-border"/><figcaption>Ooof...</figcaption></figure>
 
 $26 bucks? For a website I can set up at Bluehost or Hostgator for $10? And I don't have to spend time updating things?
 
@@ -46,7 +46,7 @@ Web hosting businesses all run off the same model (plus or minus): get a lot of 
 
 So I looked at the line items, and found the culprits:
 
-<figure><img src="/img/aws-bill-expanded.png" alt=""/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
+<figure><img src="/img/aws-bill-expanded.png" alt="RDS is the culprit..." class="faint-border"/><figcaption>RDS, why must you hurt me so?</figcaption></figure>
 
 I'm getting slammed by RDS (database) costs. My EC2 costs are higher than I'd like, as they're break even with web hosting services for the same product and zero of the services. But there's no point in addressing the EC2 item if we can't do something about RDS.
 

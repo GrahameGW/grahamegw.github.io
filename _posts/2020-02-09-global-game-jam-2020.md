@@ -9,7 +9,9 @@ tags:   [Game Development, Projects]
 
 Last weekend (Jan 28), nearly sixty people descended on <a href="https://www.cdm.depaul.edu/about/Pages/School-of-Computing.aspx">DePaul's CDM</a> to take part in the 2020 edition of the <a href="https://globalgamejam.org/">Global Game Jam</a>. As I've been getting more and more involved in the video game development community, and my computer programming skills have improved to the level of barely competent thanks to time spent messing around with <a href="https://unity.com/">Unity</a>, I decided that I would dive in for forty-eight hours of video game development madness.
 
-<figure><img src="/img/tux-repair-banner.png" alt=""width="392" height="225"/></figure>
+<figure>
+  <img src="/img/tux-repair-banner.png" alt="" width="392" height="225"/>
+</figure>
 
 The results?
 
@@ -23,17 +25,22 @@ You can play our game here, and you can check out all the amazing games develope
 
 First, some context. A game jam is a video game version of a hackathon or 24-/48-/72-hour film/design/create challenge. Teams get a short window to create a video game <span name="from-scratch">"from scratch",</span> based on a prompt or challenge. At the end of the challenge, everyone demos their games, and gets to see what everyone else put together. There are sometimes prizes; for the DePaul Global Game Jam (GGJ) the winning team received a tour of <a href="https://irongalaxystudios.com/">Iron Galaxy Studios</a>, current home of <a href="https://www.ultra-combo.com/">Killer Instinct</a>, <em>Extinction</em>, and several popular system ports.
 
-<aside name="">You weren't required to build a game engine, but you weren't supposed to bring in any prebuilt projects. So <a href="https://www.nownovel.com/blog/what-is-nanowrimo/">NaNoWriMo rules</a>.</aside>
+<aside name="from-scratch">You weren't required to build a game engine, but you weren't supposed to bring in any prebuilt projects. So <a href="https://www.nownovel.com/blog/what-is-nanowrimo/">NaNoWriMo rules</a>.</aside>
 
 <figure><img src="/img/over-9000.gif" alt=""/></figure>
 
-The <a href="https://globalgamejam.org">Global Game Jam</a> is a global game jam.<aside name="">Shocker.</aside> Started by <a href="https://www.cdm.depaul.edu/Faculty-and-Staff/Pages/faculty-info.aspx?fid=516">Susan Gold</a> in 2008, the GGJ has grown to 113 countries and develops <strong>over 9,000 games </strong>annually. That includes all of the official statistics; I quickly learned from some of the folks there that it is common for developers to skip the official jam but take the chance to leverage an artificial deadline to get the creative juices flowing.
+The <a href="https://globalgamejam.org">Global Game Jam</a> is a <span name="shocker">global game jam.</span> Started by <a href="https://www.cdm.depaul.edu/Faculty-and-Staff/Pages/faculty-info.aspx?fid=516">Susan Gold</a> in 2008, the GGJ has grown to 113 countries and develops <strong>over 9,000 games </strong>annually. That includes all of the official statistics; I quickly learned from some of the folks there that it is common for developers to skip the official jam but take the chance to leverage an artificial deadline to get the creative juices flowing.
+
+<aside name="shocker">Shocker.</aside>
 
 Teams usually assemble on the day of the event, though, it being held at DePaul, there were several pre-formed teams consisting of current CDM students. The rest of us found each other that day. Before assembling, Susan Gold (who is also a DePaul faculty member as well as a game jam founder) gave a talk to the <span name="jammer">assembled jammers.</span> Her talk was followed by the kickoff video/keynote, and then we were off to the races.
 
 <aside name="jammer">Demonym: one who participates in a game jam.</aside>
 
-<figure><img src="/img/susan-gold-ggj-2020.jpg" alt="Susan Gold speaking at GGJ 2020" width="572" height="359"/><figcaption> Susan Gold speaking at GGJ 2020 (Photo: Ross Hersemann, IGDA) </figcaption></figure>
+<figure>
+  <img src="/img/susan-gold-ggj-2020.jpg" alt="Susan Gold speaking at GGJ 2020" width="572" height="359"/>
+  <figcaption>Susan Gold speaking at GGJ 2020 (Photo: Ross Hersemann, IGDA)</figcaption>
+</figure>
 
 I was on a team of four, which was either the <span name="not-solo">smallest or second-smallest team</span> at DePaul. Our group consisted of:
 
@@ -51,7 +58,7 @@ We spent a good twenty minutes trying to find an unlocked room somewhere in the 
 
 We ironed out a few more details:
 
-<ul><li><strong>Protagonist: </strong>Nigel the Penguin. There was a claymation penguin in the GGJ intro video, so we went with it.</li><li><strong>Obstacles:</strong> Dungeon enemies, traps, and the adventurers hell bent on making messes for you to clean up. Crucially, the job was to be made harder by the fact that you were not immune from the perils of the dungeon, meaning that repairs had to be done strategically to avoid trapping yourself.</li><li><strong>Engine: </strong><a href="https://phaser.io/phaser3">Phaser</a>. Rob recommended it, as he is primarily a JavaScript developer and web dev has really short iteration cycles. No need to wait for a compiler—just refresh the page. I have some limited JS experience thanks to my last job, so there was the added benefit of my being able to actually provide some programming support.</li><li><strong>Infrastructure</strong>: I set up a <a href="https://github.com/Metapilgrim/GGJ2020">GitHub repo</a> and a Google Drive folder for us to pass around assets, and wrote a game design document (my main contribution).</li></ul>
+<ul><li><strong>Protagonist: </strong>Nigel the Penguin. There was a claymation penguin in the GGJ intro video, so we went with it.</li><li><strong>Obstacles:</strong> Dungeon enemies, traps, and the adventurers hell bent on making messes for you to clean up. Crucially, the job was to be made harder by the fact that you were not immune from the perils of the dungeon, meaning that repairs had to be done strategically to avoid trapping yourself.</li><li><strong>Engine: </strong><a href="https://phaser.io/phaser3">Phaser</a>. Rob recommended it, as he is primarily a JavaScript developer and web dev has really short iteration cycles. No need to wait for a compiler—just refresh the page. I have some limited JS experience thanks to my last job, so there was the added benefit of my being able to actually provide some programming support.</li><li><strong>Infrastructure</strong>: I set up a <a href="https://github.com/GrahameGW/GGJ2020">GitHub repo</a> and a Google Drive folder for us to pass around assets, and wrote a game design document (my main contribution).</li></ul>
 
 And divided up responsibilities:
 
@@ -86,6 +93,7 @@ Finally, though, I got my UI connected to the game, and was successfully using <
 I needed to write a timer that restarted every time a new hero appeared in the dungeon. While the timer was actually a game element and not a UI element, I needed it in place if I was going to ship a working UI. Since Rob was occupied making the game actually work, I took a crack at it.
 
 Quick game development lesson: all game engines have an <code>update()</code> function, which contains a set of instructions the game runs prior to drawing a new frame on screen. So in pseudo code, every time your screen refreshes, your game engine is doing something like:
+
 <pre><code>// example pseudocode...
 function update() {
     getPlayerInfo();
@@ -96,9 +104,11 @@ function update() {
 
     render(); 
 }</code></pre>
+
 So you need a timer that counts down and then triggers something (e.g., a timer reset) every X number of seconds. How would you do it?
 
 The obvious solution is to simply increment a counter every frame, and when it hits X seconds, do the thing:
+
 <pre><code>// assuming 60fps
 int frameCount;
 
@@ -111,6 +121,7 @@ function checkTimer() {
     if (frameCount &gt;= 600) // 60fps * 10 sec = 600 frames
         // DO THE THING
 }</code></pre>
+
 There's an issue here, though: not everyone's monitor refreshes at 60fps. Some people refresh faster (gamers often have 144Hz monitors); folks on crappy PCs will refresh slower. A person's hardware should not directly affect how the game runs.
 
 So we need a timer. And to write a timer in Phaser, you need to use <em>callbacks</em>.
@@ -122,6 +133,7 @@ So we need a timer. And to write a timer in Phaser, you need to use <em>callback
 A callback, I now know, is just a function passed to another function as an argument. The first function runs the second function as part of its routine. Which is perfect, because we can set rules on if/when the second function executes.
 
 And, as it turned out, Phaser has built-in support for managing game time. So creating a timer was as simple as launching the level with a function that would callback a function every second:
+
 <pre><code>function create() {
     // ...
 
@@ -141,6 +153,7 @@ function onEvent() {
     timer = world.heroTime; // reset timer
   }
 }</code></pre>
+
 And that was it. Callbacks!
 
 In terms of return, callbacks have got to be one of the most useful tools I picked up at the GGJ. I've since implemented callbacks in a number of places in my personal video game project, and they solved a lot of issues I was trying to resolve.

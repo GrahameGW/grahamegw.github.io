@@ -35,7 +35,7 @@ Pretty simple. In fact, there are <span name="platforms">several software platfo
 
 The important pieces here are the hardware requirements our mall has outlined for use. Our future VR set must:
 
-<ul><li>Enable users to easily handle 3D models of products</li><li>Allow users to closely examine products without [causing dizziness or headaches]({% post_url 2020-05-19-vergence-accomodation-effect %})</li><li><span name="look-down">Look at users' feet without the headset shifting</span></li><li>Be comfortable enough to wear for long stretches of time<ul><li>The assumption here is that vendors want users in their "store" as long as possible</li></ul></li><li>Include easy-to-use headphone/microphone setups that allow users to communicate with store staff (whether human-controlled avatars or chatbots) </li></ul>
+<ul><li>Enable users to easily handle 3D models of products</li><li>Allow users to closely examine products without <a href="{% post_url 2020-05-19-vergence-accomodation-effect %}">causing dizziness or headaches</a></li><li><span name="look-down">Look at users' feet without the headset shifting</span></li><li>Be comfortable enough to wear for long stretches of time<ul><li>The assumption here is that vendors want users in their "store" as long as possible</li></ul></li><li>Include easy-to-use headphone/microphone setups that allow users to communicate with store staff (whether human-controlled avatars or chatbots) </li></ul>
 
 <aside name="look-down">Hence the reason we're using shoes as the example here</aside>
 

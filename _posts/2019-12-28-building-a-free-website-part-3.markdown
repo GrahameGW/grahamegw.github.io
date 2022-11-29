@@ -23,9 +23,9 @@ What is NGINX? Well according to the folks who wrote the thing:
 
 <blockquote> NGINX is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server.</blockquote>
 
-<br>Errr...cool? What does that actually mean? Let's break it down as best we can:
+Errr...cool? What does that actually mean? Let's break it down as best we can:
 
-<h3>HTTP Server  </h3>
+### HTTP Server
 
 At its most basic, a server is a <span name="basic">piece of software that you ask for things and it delivers them to you.</span> Just as you ask a server in a restaurant for items off the menu and receive a dinner, same thing happens with a server. You send the server a request, e.g. "Give me the web page at grahamewatt.com" and it delivers the code necessary for your browser to render that web page. Also like in a restaurant, you may not actually like what you get served, but you're getting what you asked for no matter how good the meal is or nice the web page is. If you want something different, you need to ask for something else. We need a web server so that when people ask for the web pages located on our domain, we can serve them something tasty.
 

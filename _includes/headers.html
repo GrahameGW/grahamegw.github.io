@@ -19,7 +19,8 @@
     {% for entry in site.data.fonts.google %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ entry.font }}">
     {% endfor %}
-    {% include style.html %}
+    <!-- {% include style.html %} -->
+    <link rel="stylesheet" href="/style.css">
     <title>Grahame Watt {% if page.title != "Home" %} | {{page.title}}{% endif %}</title>
     <link href="https://twitter.com/grahamegw" rel="me">
     <link href="https://github.com/grahamegw" rel="me">

@@ -81,7 +81,7 @@ From here, you can get started building your website. You can draft pages, downl
 
 When doing anything on the internet, privacy and security should always be in the back of your mind. Our site management and servers are pretty well protected by our use of SSH and complex passwords (built on one of the most robust and secure cloud platforms out there), so we don't need to worry about unauthorized users breaking in and defacing our website or stealing our AWS credentials. However, our website is public in the most literal way possible: whenever someone visits our site and asks for a page (a <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">GET request</a>), we send the relevant HTML completely unencrypted.
 
-This is not the end of the world—after all, our website is public, so <span name="spying">if <a href="https://spreadprivacy.com/protection-from-isp-spying/">someone was spying</span> on our user</a>, they could figure out what the user was looking at by simply visiting the same page as they did. What is more problematic is the fact that sometimes users want to input information into a website. Information like passwords. Like, say, on an admin login screen...
+This is not the end of the world—after all, our website is public, so if <a href="https://spreadprivacy.com/protection-from-isp-spying/"><span name="spying">someone was spying</span> on our user</a>, they could figure out what the user was looking at by simply visiting the same page as they did. What is more problematic is the fact that sometimes users want to input information into a website. Information like passwords. Like, say, on an admin login screen...
 
 <aside name="spying">While DNS requests aren't exactly public, due to the nature of how the internet works there are several third parties who handle web traffic, and have to see the to/from destination addresses in order to facilitate the request. Your ISP definitely tracks this info, and its safe to say there are probably a few other folks who do too</aside>
 
@@ -210,7 +210,7 @@ Open 'er up, and fill out the fields in the <strong>Media Library</strong> tab a
 
 And turn all the switches to the "On" position. This will tell Offload Media Lite to move all files and images over to s3 whenever you upload them, organize them the same way WordPress would, and then remove them from your EC2 instance, saving space on our little hard drive.
 
-<figure><img src="offload-settings" alt="" width="373" height="672"/><figcaption>Settings here at grahamewatt.com</figcaption></figure>
+<figure><img src="/img/offload-settings.png" alt="" width="373" height="672"/><figcaption>Settings here at grahamewatt.com</figcaption></figure>
 
 <em>"But wait! When I chose Amazon S3 for my storage provider, it said something about access keys?"</em>
 

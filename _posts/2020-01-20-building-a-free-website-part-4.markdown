@@ -84,7 +84,7 @@ Well, not really. The installation is up and active, but there are some security
 
 Respond <strong>yes </strong>(<code>y</code>) to everything until presented with the password policy validation menu:
 
-<pre><code>There are three levels of password validation policy:
+<pre><code class="language-plaintext">There are three levels of password validation policy:
 
 LOW Length &gt;= 8
 MEDIUM Length &gt;= 8, numeric, mixed case, and special characters
@@ -110,7 +110,7 @@ We need to make the following changes:
 
 Our new configuration should look like this:
 
-<pre><code>server {
+<pre><code class="language-plaintext">server {
         listen 80 default_server;
         root /var/www/mywebsite.com;
 
@@ -142,7 +142,7 @@ Test for typos with <code>sudo nginx -t</code>, save, and reload nginx with <cod
 
 We can test that PHP was successfully stalled by creating a quick info page. Create a new file in your <code>/var/www/mywebsite.com</code> folder called <code>test.php</code> and put the following in it:
 
-<pre><code>&lt;?php
+<pre><code class="language-php">&lt;?php
 phpinfo();</code></pre>
 
 Save the file and then navigate in your browser to <code>mywebsite.com/test.php</code>. If all is well, you should be greeted with the following info page:
