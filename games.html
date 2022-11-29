@@ -29,7 +29,17 @@ layout: page
                     <img src="{{ game.banner }}" alt="{{ game.name }}">
                 </td>
                 <td class="game-description">
-                    <p>{{ game.description }}</p>
+                    <div>
+                        <p>{{ game.description }}</p>
+                    </div>
+                    <div style="clear:both; vertical-align:bottom">
+                        <p>
+                            {% for link in game.links %}
+                            <a href="{{ link.url }}">{{ link.text }}</a>
+                            {% if link != game.links.last %}<span>  |  </span>{% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
                 </td>
             </tr>
         </table>
