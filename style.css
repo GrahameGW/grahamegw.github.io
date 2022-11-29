@@ -210,3 +210,34 @@ blockquote code {
     font-style: normal;
     font-weight: 550;
 }
+
+.gallery-img {
+    float: left;
+    width:  33%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.games-footer{
+    text-align: center; clear: both; padding-top: 20px;
+}
+
+.game-entry {
+
+}
+
+.game-entry img {
+    width: 180px;
+    height: 150px;
+}
+
+.game-description {
+    vertical-align: top;
+}
+
+.game-description p {
+    font-size: 0.9rem;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+

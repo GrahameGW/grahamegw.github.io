@@ -10,7 +10,7 @@ tags:   [Game Development, Projects]
 Last weekend (Jan 28), nearly sixty people descended on <a href="https://www.cdm.depaul.edu/about/Pages/School-of-Computing.aspx">DePaul's CDM</a> to take part in the 2020 edition of the <a href="https://globalgamejam.org/">Global Game Jam</a>. As I've been getting more and more involved in the video game development community, and my computer programming skills have improved to the level of barely competent thanks to time spent messing around with <a href="https://unity.com/">Unity</a>, I decided that I would dive in for forty-eight hours of video game development madness.
 
 <figure>
-  <img src="/img/tux-repair-banner.png" alt="" width="392" height="225"/>
+  <img src="/img/games/tux-repair-banner.png" alt="" width="392" height="225"/>
 </figure>
 
 The results?
@@ -68,7 +68,7 @@ And then we were off. Andres and Ryan began cranking out the game assets, while 
 
 On the asset side of the house, Ryan and Andres knocked it out of the park. Andres, who worked from his home studio for most of the jam, put together a series of classic dungeon themes, perfect for the tense crawl/campy eighties game vibe we were going for. Ryan mixed and matched publicly available assets with his own creations; the look and feel of the game is all due to him:
 
-<figure><img src="/img/tux-repair-gameplay.png" alt="" width="458" height="326"/><figcaption>Screenshot from Tux Repair</figcaption></figure>
+<figure><img src="/img/games/tux-repair-gameplay.png" alt="" width="458" height="326"/><figcaption>Screenshot from Tux Repair</figcaption></figure>
 
 On the programming side of things, it's safe to say Rob carried the team. Using a combination of JavaScript chops and Google-fu, Rob figured out how to directly load maps built in Tiled, create events and behaviors for the various game entities, and even get the sound effects and some of the animations working. He had to pull an all-nighter on Saturday, but doing so made it so we had a game to turn in and present.
 

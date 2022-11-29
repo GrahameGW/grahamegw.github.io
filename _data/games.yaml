@@ -1,0 +1,25 @@
+itch:
+  - name: Casting Lots
+    embed: https://itch.io/embed/1618686
+  - name: Some of Our Parts
+    embed: https://itch.io/embed/1538959
+  - name: Cave Story
+    embed: https://itch.io/embed/1177168
+  - name: Radio Town
+    embed: https://itch.io/embed/776215
+  - name: Buff Man & Jump Man
+    embed: https://itch.io/embed/683110
+
+self:
+  - name: Corvebawl
+    banner: /img/games/corvebawl-screenshot.png
+    description: >
+      A remake of the classic flash game <a href="http://curveball-game.com">Curveball</a>, 
+      no longer supported by major browsers due to its reliance on Adobe Flash technology. 
+      A 3D pong game that allows players to put spin on the ball, increasing the challenge.
+  - name: "Tux Repair: Dungeon Cleanup"
+    banner: /img/games/tux-repair-banner.png
+    description: >
+      Play as Cecil, the penguin janitor tasked with cleaning and resetting the dungeon 
+      after the destruction caused by the latest hero’s attempt to clear the level. 
+      Be careful–the traps and monsters are just as deadly to you as they are to the heroes!

@@ -1,0 +1,49 @@
+---
+title: games
+permalink: games.html
+layout: page
+---
+
+<div>
+    <h1>Games</h1>
+</div>
+<div class="container">
+    <p>
+        Games I've worked on as a programmer, designer, animator, producer, or in any other capacity. 
+        Most games were developed as part of <a href="{% post_url 2020-02-09-global-game-jam-2020 %}">a game jam</a>.
+    </p>    
+    <p>All are open source and free to play. Except for Tux Repair, all games run on Unity/C#.</p>
+    <p>
+        Released games are hosted on my <a href="https://metapilgrim.itch.io/">itch page</a>.
+        Projects in progress are on my <a href="https://github.com/grahamegw">Github</a>.
+    </p>
+    <h2>Play</h2>
+        {% for game in site.data.games.itch %}
+        <iframe src="{{ game.embed }}" width="100%" height="167" frameborder="0"></iframe>
+        {% endfor %}
+        {% for game in site.data.games.self %}
+        <h3>{{ game.name }}</h3>
+        <table class="game-entry">
+            <tr>
+                <td>
+                    <img src="{{ game.banner }}" alt="{{ game.name }}">
+                </td>
+                <td class="game-description">
+                    <p>{{ game.description }}</p>
+                </td>
+            </tr>
+        </table>
+        {% endfor %}
+    <h2>Gallery</h2>
+    <div>
+    {% for image in site.static_files %}
+        {% if image.path contains 'img/games' %}
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" class="gallery-img"/>
+        {% endif %}
+    {% endfor %}
+    </div>
+    <br>
+    <div class="games-footer">
+        <a href="https://metapilgrim.itch.io/">itch.io</a> | <a href="https://github.com/grahamegw">Github</a> | <a href="/games">Back to Top</a>
+    </div>
+</div>

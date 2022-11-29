@@ -33,7 +33,7 @@ So I decided to build it myself. Over the last year or so, I've been teaching my
 
 The result? <a href="https://grahamewatt.com/games/corvebawl/">Corvebawl</a>:
 
-<figure><img src="/img/corvebawl-screenshot.png" alt=""/></figure>
+<figure><img src="/img/games/corvebawl-screenshot.png" alt=""/></figure>
 
 I'm <a href="https://grahamewatt.com/games/corvebawl/">hosting it here</a>, so please check it out and let me know what you like/dislike about it. If you're interested in playing around with the project yourself, I've uploaded the <a href="https://cdn.grahamewatt.com/wp-content/uploads/2020/06/12132224/corvebawl.unitypackage">unitypackage</a> file for you to download.
 
