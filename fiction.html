@@ -1,0 +1,48 @@
+---
+title: Fiction
+permalink: fiction.html
+layout: page
+---
+
+<div>
+    <h1>Fiction</h1>
+</div>
+{% for entry in site.data.fiction %}
+<div class="fiction-head"> 
+    <div>
+        <a href={{ entry.uri }} style="margin-bottom: 0px;">
+            <h2>{{ entry.title }}</h2>
+        </a>
+    </div>
+    <div class="fiction-head-type">
+        <h3>{{ entry.form }}</h3>
+    </div>
+</div>
+<div class="fiction-body">
+    {% if entry.img.size > 0 %}
+    <table>
+        <tr>
+            <td style="vertical-align: top" width="75%">
+    {% endif %}
+                {{ entry.description | markdownify }}
+                {% for bullet in entry.bullets %}
+                <p class="fiction-bullet">&#8594 {{ bullet }}</p>
+                {% endfor %}
+    {% if entry.img.size > 0 %}
+            </td>
+            <td style="padding-left: 20px">
+    {% endif %}
+                {% for image in entry.img %}
+                <img src={{ image }} style="object-fit: fill; max-width: 100%;">
+                {% endfor %}
+    {% if entry.img.size > 0 %}
+            </td>
+        </tr>
+    </table>
+    {% endif %}
+</div>
+{% endfor %}
+<br>
+<div class="games-footer">
+    <a href="/fiction">Back to Top</a>
+</div>

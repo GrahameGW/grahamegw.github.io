@@ -17,18 +17,18 @@ body {
 }
 
 footer {
-        border-top: 1px #aaa solid;
-        position: relative;
-        margin-top: auto;
-        left: 25%;
-        height: 65px;
-        width: 50%;
-        overflow: hidden;
-        text-align: center;
-        font-size: 0.8rem;
-        -webkit-font-smoothing:antialiased;
-        text-rendering:optimizeLegibility;
-        color: #555;
+    border-top: 1px #aaa solid;
+    position: relative;
+    margin-top: auto;
+    left: 25%;
+    height: 65px;
+    width: 50%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0.8rem;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    color: #555;
 }
 
 a {
@@ -171,11 +171,6 @@ figcaption {
 }
 
 .post-nav {
-    /* Insert your custom styling here. Example:
-
-       font-size: 14px;
-       margin-bottom: 1em;
-    */
     display: flex;
 }
 .post-nav div {
@@ -221,11 +216,7 @@ blockquote code {
 .games-footer{
     text-align: center; clear: both; padding-top: 20px;
 }
-/*
-.game-entry {
 
-}
-*/
 .game-entry img {
     width: 180px;
     height: 150px;
@@ -241,3 +232,35 @@ blockquote code {
     margin-left: 10px;
 }
 
+.fiction-head>div {
+    display: inline-block; 
+    width: 49%;
+    margin-bottom: 1.1rem;
+}
+.fiction-head-type {
+    text-align: right;
+    color: #aaa;
+}
+
+.fiction-body p {
+    margin-top: 0px;
+}
+
+.fiction-body {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa
+}
+
+.fiction-body>table {
+    table-layout: fixed; 
+}
+
+.fiction-body td {
+    vertical-align: top;
+}
+.fiction-bullet {
+    margin-bottom: .75rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+}
