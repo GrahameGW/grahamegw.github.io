@@ -1,9 +1,9 @@
 - name: Articles
   link: /
 - name: Fiction
-  link: /fiction
+  link: /fiction.html
 - name: Games
-  link: /games
+  link: /games.html
 - name: LinkedIn
   link: https://linkedin.com/in/wattgrahame
 - name: Github
