@@ -52,8 +52,8 @@ self:
       punch but can't jump. Jump Man is quick but can't fight. Using the strengths of each, solve retro pixel platform levels.
       Develped with my brother for the <a href="https://itch.io/jam/united-game-jam-2020">2020 United Game Jam</a>.
     links:
-      url: https://metapilgrim.itch.io/buff-man-jump-man
-      text: Download (itch.io)
+      - url: https://metapilgrim.itch.io/buff-man-jump-man
+        text: Download (itch.io)
 
   - name: Corvebawl
     banner: /img/games/corvebawl-screenshot.png
