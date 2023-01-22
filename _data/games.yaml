@@ -1,16 +1,60 @@
-itch:
-  - name: Casting Lots
-    embed: https://itch.io/embed/1618686
-  - name: Some of Our Parts
-    embed: https://itch.io/embed/1538959
-  - name: Cave Story
-    embed: https://itch.io/embed/1177168
-  - name: Radio Town
-    embed: https://itch.io/embed/776215
-  - name: Buff Man & Jump Man
-    embed: https://itch.io/embed/683110
+
 
 self:
+  - name: Casting Lots
+    banner: /img/games/casting-lots-banner.png
+    description: >
+      Survive against waves of monsters with your magic by Casting Lots. Astra is on the run from 
+      the Necromancer! Equip her with powerful spell dice that change the effects of the spell each 
+      time you cast it, and fight back the undead hordes. Developed for the 
+      <a href="https://itch.io/jam/gmtk-jam-2022">2022 GMTK Game Jam.</a>
+    links:
+      url: https://r0nnie.itch.io/castinglots
+      text: Play (itch.io)
+
+  - name: Some Of Our Parts
+    banner: /img/games/some-parts-banner.png
+    description: >
+      A 2D side-scrolling platformer where you'll really have to work on yourself. 
+      Move through the bleak (albeit vibrant) scenery, pick up the pieces of your body&mdash;or 
+      somebody else's&mdash;and make your way to becoming a complete person! Developed for the
+      <a href="https://itch.io/jam/gamedevtv-jam-2022">2022 GameDev.tv Game Jam</a>.
+    links:
+      url: https://metapilgrim.itch.io/some-of-your-parts
+      text: Download (itch.io)
+
+  - name: Cave Storm
+    banner: /img/games/cave-storm-banner.png
+    description: >
+      Defend your subterranean lair from hordes of mutant monsters with your OWN horde of mutant monsters!
+      Level up the hounds; feed them the spoils of war and turn them into new and exciting monsters ready 
+      to go toe-to-toe against the never-ending onslaught. Developed as part of a duo
+      for the <a href="https://itch.io/jam/brackeys-6">2021.2 Brackeys Game Jam</a>.
+    links:
+      url: https://metapilgrim.itch.io/cave-storm
+      text: Download (itch.io)
+
+  - name: Radio Town
+    banner: /img/games/radio-tower-title.png
+    description: >
+      Pick up the pieces of a broken community through the power of Radio! Radio Town is a narrative adventure 
+      about a forgotten town in the wake of massive societal upheaval. Play as Khalid, a vagabond-turned-DJ 
+      trying to reboot the local community radio station and rebuild a lost community full of colorful characters 
+      and challenging story arcs. Developed for the <a href="https://itch.io/jam/gdex-2020"> 2020 GDEX Game Jam</a>.
+    links:
+      url: https://metapilgrim.itch.io/radio-town
+      text: Download (itch.io)
+
+  - name: Buff Man & Jump Man
+    banner: /img/games/buff-man-menu.png
+    description: >
+      Jump Man and Buff Man! Two heroes braving a dangerous (and dare I say cute?) world together! Buff Man can 
+      punch but can't jump. Jump Man is quick but can't fight. Using the strengths of each, solve retro pixel platform levels.
+      Develped with my brother for the <a href="https://itch.io/jam/united-game-jam-2020">2020 United Game Jam</a>.
+    links:
+      url: https://metapilgrim.itch.io/buff-man-jump-man
+      text: Download (itch.io)
+
   - name: Corvebawl
     banner: /img/games/corvebawl-screenshot.png
     description: >
@@ -22,6 +66,7 @@ self:
         text: Play
       - url: /game-data/corvebawl/corvebawl.unitypackage
         text: unitypackage
+
   - name: "Tux Repair: Dungeon Cleanup"
     banner: /img/games/tux-repair-banner.png
     description: >
