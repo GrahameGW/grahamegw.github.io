@@ -18,32 +18,36 @@ layout: page
         Projects in progress are on my <a href="https://github.com/grahamegw">Github</a>.
     </p>
     <h2>Play</h2>
-        {% for game in site.data.games.itch %}
-        <iframe src="{{ game.embed }}" width="100%" height="167" frameborder="0"></iframe>
-        {% endfor %}
-        {% for game in site.data.games.self %}
-        <h3>{{ game.name }}</h3>
-        <table class="game-entry">
-            <tr>
-                <td>
-                    <img src="{{ game.banner }}" alt="{{ game.name }}">
-                </td>
-                <td class="game-description">
-                    <div>
-                        <p>{{ game.description }}</p>
-                    </div>
-                    <div style="clear:both; vertical-align:bottom">
-                        <p>
-                            {% for link in game.links %}
-                            <a href="{{ link.url }}">{{ link.text }}</a>
-                            {% if link != game.links.last %}<span>  |  </span>{% endif %}
-                            {% endfor %}
-                        </p>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        {% endfor %}
+        <div class="games-feed">
+            {% assign i = 0 %}
+            {% for game in site.data.games.itch %}
+            <iframe src="{{ game.embed }}" width="100%" height="167" frameborder="0"></iframe>
+            {% endfor %}
+            {% for game in site.data.games.self %}
+                <h3 id="game-entry-{{i}}">{{ game.name }}</h3>
+                <table class="game-entry">
+                    <tr>
+                        <td>
+                            <img src="{{ game.banner }}" alt="{{ game.name }}">
+                        </td>
+                        <td class="game-description">
+                            <div>
+                                <p>{{ game.description }}</p>
+                            </div>
+                            <div style="clear:both; vertical-align:bottom">
+                                <p>
+                                    {% for link in game.links %}
+                                    <a href="{{ link.url }}">{{ link.text }}</a>
+                                    {% if link != game.links.last %}<span>  |  </span>{% endif %}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                {% assign i = i | plus: 1 %}
+                {% endfor %}
+        </div>
     <h2>Gallery</h2>
     <div>
     {% for image in site.static_files %}
