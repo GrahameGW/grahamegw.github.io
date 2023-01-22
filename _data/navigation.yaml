@@ -1,4 +1,4 @@
-- name: Home
+- name: Articles
   link: /
 - name: Fiction
   link: /fiction.html
@@ -6,5 +6,7 @@
   link: /games.html
 - name: LinkedIn
   link: https://linkedin.com/in/wattgrahame
-- name: Twitter
-  link: https://twitter.com/grahamegw
+- name: Github
+  link: https://github.com/grahamegw
+- name: itch.io
+  link: https://metapilgrim.itch.io

@@ -19,14 +19,19 @@
     {% for entry in site.data.fonts.google %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ entry.font }}">
     {% endfor %}
-    {% include style.html %}
-    <title>Grahame Watt {% if page.title != "Home" %} | {{page.title}}{% endif %}</title>
+    <!-- {% include style.html %} -->
+    <link rel="stylesheet" href="/style.css">
+    <title>Grahame Watt {% if page.title != "Articles" %} | {{page.title}}{% endif %}</title>
     <link href="https://twitter.com/grahamegw" rel="me">
     <link href="https://github.com/grahamegw" rel="me">
     <link href="https://grahamewatt.com/" rel="canonical">
     <link href="mailto:contact@grahamewatt.com" rel="me">
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-    <!--I like aside tags more than I care about not using jQuery-->
-    <script src="/jQuery-min.3.6.0.js"></script>
-    <script src="/asides.js"></script>
-</head>
+    <!-- I like aside tags more than I care about not using jQuery -->
+    <script src="/js/jQuery-min.3.6.0.js"></script>
+    <script src="/js/asides.js"></script>
+    <!-- Code prettifier -->
+    <link rel="stylesheet" href="/highlights/atom-one-light.min.css">
+    <script src="/highlights/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
