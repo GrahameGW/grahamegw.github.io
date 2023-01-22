@@ -9,8 +9,8 @@ self:
       time you cast it, and fight back the undead hordes. Developed for the 
       <a href="https://itch.io/jam/gmtk-jam-2022">2022 GMTK Game Jam.</a>
     links:
-      url: https://r0nnie.itch.io/castinglots
-      text: Play (itch.io)
+      - url: https://r0nnie.itch.io/castinglots
+        text: Play (itch.io)
 
   - name: Some Of Our Parts
     banner: /img/games/some-parts-banner.png
@@ -20,8 +20,8 @@ self:
       somebody else's&mdash;and make your way to becoming a complete person! Developed for the
       <a href="https://itch.io/jam/gamedevtv-jam-2022">2022 GameDev.tv Game Jam</a>.
     links:
-      url: https://metapilgrim.itch.io/some-of-your-parts
-      text: Download (itch.io)
+      - url: https://metapilgrim.itch.io/some-of-your-parts
+        text: Download (itch.io)
 
   - name: Cave Storm
     banner: /img/games/cave-storm-banner.png
@@ -31,19 +31,19 @@ self:
       to go toe-to-toe against the never-ending onslaught. Developed as part of a duo
       for the <a href="https://itch.io/jam/brackeys-6">2021.2 Brackeys Game Jam</a>.
     links:
-      url: https://metapilgrim.itch.io/cave-storm
-      text: Download (itch.io)
+      - url: https://metapilgrim.itch.io/cave-storm
+        text: Download (itch.io)
 
   - name: Radio Town
-    banner: /img/games/radio-tower-title.png
+    banner: /img/games/radio-tower-title.jpg
     description: >
       Pick up the pieces of a broken community through the power of Radio! Radio Town is a narrative adventure 
       about a forgotten town in the wake of massive societal upheaval. Play as Khalid, a vagabond-turned-DJ 
       trying to reboot the local community radio station and rebuild a lost community full of colorful characters 
       and challenging story arcs. Developed for the <a href="https://itch.io/jam/gdex-2020"> 2020 GDEX Game Jam</a>.
     links:
-      url: https://metapilgrim.itch.io/radio-town
-      text: Download (itch.io)
+      - url: https://metapilgrim.itch.io/radio-town
+        text: Download (itch.io)
 
   - name: Buff Man & Jump Man
     banner: /img/games/buff-man-menu.png
