@@ -1,6 +1,15 @@
 
 
 self:
+  - name: Specimen
+    banner: /img/games/specimen.jpg
+    description: >
+      Escape the haunted forest with your army of horrible creatures in this Diablo-inspired souls-like adventure! 
+      Wielding the mighty Leto Orb, control your specimens as they fight through the denizens of the haunted forest, 
+      feeding on their biomass to grow into horrible monstrosities... but are they horrible enough to carry you to freedom?
+    links:
+      - url: https://metapilgrim.itch.io/specimen
+        text: Play (itch.io)
   - name: Casting Lots
     banner: /img/games/casting-lots-banner.png
     description: >
