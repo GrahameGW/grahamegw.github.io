@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Specimen Devlog"
-date:   2023-02-12 21:10 -0700
+date:   2023-02-19 13:05W -0800
 tags:   Projects GameDev
 ---
 
@@ -27,7 +27,7 @@ Because it was a fully-volunteer project we hadn't set any constraints on the ty
 
 We spent about a month and a half meeting about ideas, sketching out mechanics and concept art. We had a few really interesting ideas come out of the whole process&mdash;perhaps they'll resurface in future games:
 
-- *Merchant's Journey*, a upbeat deck-building adventure based around negotiations and bargaining,
+- *Merchant's Journey*, an upbeat deck-building adventure based around negotiations and bargaining,
 - *Runebearers*, a JRPG-style adventure where the characters all manifest magic runes that change depending on player decisions,
 - *Empty Planet*, an open-world planet exploration game with *Myst*-style puzzles
 - *Fauna,* where *Princess Mononoke* meets the evolution-mechanics of *Spore*
@@ -99,7 +99,7 @@ public class DamageableEntity : Monobehaviour
 
 This sort of structure meant that Neil could build up unique powerups and events by simply assembling lists of `ScriptableObjects`, and didn't need to worry about how everything coupled. It also made debugging a lot easier&mdash;just had to look at the given behavior to see if was doing what we expected.
 
-Of course, there were plenty of other bugs, including a few highly-pernicious ones we were troubleshooting right up until the last second. A big source of issues for us came from over-engineering our AI system. We wanted to have it also be modular and designer friendly, but ended up using behavior trees that were totally designed in code, making debugging a lot trickier than it needed to be. Combined with the fact we changed the game from a totally flat world to having slopes and other 3D elements, and I suddenly found myself with all sorts of mysterious bugs with the AI that didn't make sense based on the code. Turns out, they all were rooted in the initial flat-world assumption. We had built our models with their coordinates at their base, as though it was a board game, but the logic of the 3D world assumed that the coordinates were at a model's center. So the AI displayed all sorts of kooky behavior simply because it was looking in the wrong direction for other entities. Easy enough to fix, but incredibly tricky to diagnose.
+Of course, there were plenty of other bugs, including a few highly pernicious ones we were troubleshooting right up until the last second. A big source of issues for us came from over-engineering our AI system. We wanted to have it also be modular and designer-friendly, but ended up using behavior trees that were totally designed in code, making debugging a lot trickier than it needed to be. Combined with the fact we changed the game from a totally flat world to having slopes and other 3D elements, and I suddenly found myself with all sorts of mysterious bugs with the AI that didn't make sense based on the code. Turns out, they all were rooted in the initial flat-world assumption. We had built our models with their coordinates at their base, as though it was a board game, but the logic of the 3D world assumed that the coordinates were at a model's center. So the AI displayed all sorts of kooky behavior simply because it was looking in the wrong direction for other entities. Easy enough to fix, but incredibly tricky to diagnose.
 
 The most frustrating bug was one that seemed totally random. Every so often, the player would open up one of the menus that listed all of their monsters, only to have the entries show up several times. We worked on that one for weeks to no avail. Part of what was so mystifying was that the UI was not coupled to the game, but would just read the current data and display it. We fixed the most obvious cases, but it would still randomly occur. So we launched, and chalked it up to a mystery that hopefully people wouldn't run across...
 
