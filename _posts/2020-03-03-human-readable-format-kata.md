@@ -11,7 +11,7 @@ I've been doing CodeWars on and off for a while now, and it's helped me a lot in
 
 You can check out a previous kata I did: <a href="https://grahamewatt.com/tortoise-race-kata/">Tortoise Race Kata</a>.
 
-<h2>Problem:</h2>
+## Problem:
 
 Your task in order to complete this Kata is to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
 
