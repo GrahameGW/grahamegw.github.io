@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Specimen Devlog"
-date:   2023-02-19 13:05W -0800
+date:   2023-02-19 13:05 -0800
 tags:   Projects GameDev
 ---
 
