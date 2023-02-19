@@ -1,0 +1,11 @@
+{
+    // Line length
+    "MD013": false,
+    // Inline HTML
+    "MD033": {
+        "allowed_elements": [
+            "span",
+            "aside"
+        ]
+    }
+}
