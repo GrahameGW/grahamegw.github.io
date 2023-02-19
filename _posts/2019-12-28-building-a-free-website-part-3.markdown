@@ -5,7 +5,7 @@ date:   2019-12-28 15:31 -0700
 tags:   Projects Tech
 ---
 
-Welcome back.  This tutorial is the third in my series on setting up a website using  free infrastructure. We'll be installing NGINX (pronounced "engine-X") to use as a web server and setting up our DNS to use our domain name.
+Welcome back.  This tutorial is the third in my series on setting up a website using free infrastructure. We'll be installing NGINX (pronounced "engine-X") to use as a web server and setting up our DNS to use our domain name.
 
 [Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
 [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
@@ -21,7 +21,7 @@ In the previous section, we set up an EC2 instance to run our website. Using the
 
 What is NGINX? Well according to the folks who wrote the thing:
 
-<blockquote> NGINX is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server.</blockquote>
+> NGINX is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server.
 
 Errr...cool? What does that actually mean? Let's break it down as best we can:
 
@@ -33,7 +33,7 @@ At its most basic, a server is a <span name="basic">piece of software that you a
 
 HTTP just happens to be the protocol used to ask for things across the internet; HTTP will also cover HTTPS, which NGINX supports. You can read more about it in [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %})
 
-<h3>Reverse Proxy</h3>
+### Reverse Proxy
 
 A proxy in networking is the same as in real life—it's a computer acting on behalf of another computer. Most people use proxies without realizing it whenever they're on a wi-fi network—all of your page requests go via your router which actually sends them out into the wider world on your behalf, receives the response and then delivers it to you. Your router is a <strong>forward proxy</strong> and is behaving as your agent to the web. The critical advantage of a proxy in your home network is that it can manage the traffic of everyone on the network. You get the blog you wanted to read and your anime-loving roommate gets episode #1,259,352 of Naruto, and neither of you have to worry about accidentally receiving each other's material.
 
@@ -43,7 +43,7 @@ A <strong>reverse proxy</strong> is a <span name="backwards">backwards forward p
 
 We're not going to have multiple web servers, so we don't have to worry about complex proxy networks. We'll just use NGNIX to convert incoming traffic to HTTPS and leave it at that.
 
-<h3>IMAP/POP3 proxy server </h3>
+### IMAP/POP3 proxy server
 
 Email. We're not setting that up, so we can ignore this.
 
