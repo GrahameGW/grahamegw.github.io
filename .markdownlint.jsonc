@@ -5,7 +5,10 @@
     "MD033": {
         "allowed_elements": [
             "span",
-            "aside"
+            "aside",
+            "iframe",
+            "figure",
+            "figcaption"
         ]
     }
 }

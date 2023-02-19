@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "A Specimen Devlog"
+title:  "Specimen Devlog"
 date:   2023-02-12 21:10 -0700
-tags:   Projects "Game Dev"
+tags:   Projects GameDev
 ---
 
 Last Tuesday I uploaded the v1.0 release of our game *[Specimen](https://metapilgrim.itch.io/specimen)*, a top-down RPG in the style and vein of [Diablo](https://diablo2.blizzard.com/en-us/). *Specimen* was the culmination of just over seven months of work with [Neil Quillen](http://www.neilquillen.com/) and [Zane Heer](https://www.artstation.com/zanheer/profile). Check it out on my [itch page](https://metapilgrim.itch.io) along with the [rest of my games](https://grahamewatt.com/games). It takes about ~45 minutes to play all the way through. We're pumped about the final result and I hope you enjoy it!  
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XZYR8pxTXVU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Conception
 
@@ -15,7 +17,7 @@ Neil and I got the project started fairly soon after wrapping up our GMTK 2023 e
 
 We agreed on a time frame of 4-6 months, working part time. Evenings here, weekends there, that sort of thing. Neil, a professional composer, was going to do absolutely <span name="no-composition">no composition</span> for the game and instead take on the game design role. I wasn't really interested in doing much design; I was more interested in better understanding the operation and production process, as well as getting to program something a little bit more sophisticated than the bodged-together products I'd done in the past.
 
-<aside name="no-composition">Well, not *zero* composition, but it certianly wasn't going to be his primary focus&mdash;that would be too much like work</aside>
+<aside name="no-composition">Well, not *zero* composition, but it certainly wasn't going to be his primary focus&mdash;that would be too much like work</aside>
 
 We roped in Zane, who we'd worked with on [Some of Our Parts](https://metapilgrim.itch.io/some-of-your-parts) to do art. Between us, that was a full squad with all the major disciplines more-or-less covered, and so in early August 2022 we began to brainstorm.
 
@@ -30,7 +32,9 @@ We spent about a month and a half meeting about ideas, sketching out mechanics a
 - *Empty Planet*, an open-world planet exploration game with *Myst*-style puzzles
 - *Fauna,* where *Princess Mononoke* meets the evolution-mechanics of *Spore*
 
-HOLD FOR IMAGES
+<figure>
+    <img src="/img/fauna2.jpg" class="faint-border"/><figcaption>Concept art for Fauna<br>Artist: Zane Heer</figcaption>
+</figure>
 
 Ultimately, we went with what would become *[Specimen](https://metapilgrim.itch.io/specimen)*, a *Diablo*-inspired adventure game about a mad scientist exploring a scary forest with a bunch of freaky minions. The player would train their minions to fight with the monsters of the forest and have some limited control by issuing rally orders and throwing bait. They could power up their minions with the biomass left by slain monsters and by mysterious mutation powerups which would give their minions whole new abilities. Think *Pokemon* played by a necromancer.
 
@@ -42,7 +46,7 @@ We also made the decision to go 3D instead of 2D, which was definitely going to 
 
 *Specimen* was built in [Unity](https://unity.com), as it was the engine the team had the <span name="familiarity">most familiarity with.</span> We took a top-down approach in keeping with the early '00s aesthetic. Things actually went pretty smoothly on the development front, due to a strategy of "delegating responsibility." Wearing my programming hat, I could focus on building features needed for the game and make them modular and easy to tweak. Then I could hand them off to Neil and move onto the next thing, while he worked on actually making use of the feature in game. It was an "a-ha" moment for me to understand that the role of the programmer in game dev is much more about building the infrastructure that can be used to put together a game than actually building the game. A well-programmed, modular set of features can transfer easily between games; spending the time to be intentional doesn't just benefit the current project but can benefit projects down the line as well.
 
-HOLD FOR TOP DOWN IMAGE 
+![Specimen screenshot](/img/specimen-topdown.png)
 
 <aside name="familiarity">My only one for 3D and Neil's only one period</aside>
 
@@ -110,6 +114,10 @@ While the list of new insight and bits of wisdom I gained from this project can 
 We had initially set up an issue-based system: a board, with cards and status for those cards. We weren't exactly following an agile paradigm due to the highly asynchronous way we were working, but our structure was similar enough. Every Monday evening we met to discuss process, demo new features and content, and figure out the priorities for the upcoming week. That part of our workflow was completely invaluable; everyone had accountability to do what they said they were going to do, everyone could see progress and understand the current problems, and there was always a forum to discuss the project.
 
 Where we fell flat was in our tracking and management systems. We operated pretty much exclusively out of a working Google sheet for tasks, concepts, brainstorming, etc., which was fine when we were doing greenfield development but fell down hard when we started polishing and tackling bugs. Because the format was basically "jot down notes and hope the other person understands them," there was a huge amount of waste in the back-and-forth trying to understand what was actually an issue, how to replicate the issue, and who was actually responsible for fixing it. This (lack of) process made the already aggravating bugs listed above far more painful to sort out.
+
+<figure>
+    <img src="/img/bad-project-management.png" class="faint-border"/><figcaption>Maybe not the best way to do things...</figcaption>
+</figure>
 
 What I found to be particularly interesting was how the process problems didn't show themselves until we had a significant amount of work and complexity to handle. It literally seemed like a switch was flipped. One day we were cruising through the game, things coming together like magic; then the next day came and everything was pure frustration. We hit that <span name="gdc-talk">critical mass of waste</span> and suddenly we were spending more time fighting our project than improving it.
 
