@@ -16,7 +16,8 @@ The result will be an array `[hour, min, sec]` which is the time needed in hours
 
 ## My answer
 
-<pre><code class="language-csharp">public static int[] Race(int v1, int v2, int g)
+```csharp
+public static int[] Race(int v1, int v2, int g)
 {
   if (v1 < v2)
   {
@@ -29,4 +30,5 @@ The result will be an array `[hour, min, sec]` which is the time needed in hours
   }
 
   return null;
-}</code></pre>
+}
+```

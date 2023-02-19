@@ -11,11 +11,11 @@ I have a website! And not just any website. One with my name on it. One where I 
 In this series, I'm going to cover how to set up your own "free" website on AWS. We'll get a site set up exactly as this one is. [grahamewatt.com](/) runs using LEMP infrastructure (<strong>L</strong>inux, <span name="e-for-engine"><strong>N</strong>GINX,</span> <strong>M</strong>ySQL, <strong>P</strong>HP) on EC2, s3, and RDS, using CloudFront for its CDN and Wordpress for its CMS.
 <aside name="e-for-engine">It's "E" for "eNGINe - X".</aside>
 
-[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
-[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
-[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
-[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
-[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
+[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %})
+ | [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %})
+ | [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %})
+ | [Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %})
+ | [Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 ## Getting Started
 
@@ -68,7 +68,7 @@ That's the macro-level stuff on AWS. All of it is either free-tier eligible or j
 
 There are also a bunch of default software packages that come preinstalled on Ubuntu, Again, all of these things are free and open source, so no need to bust out the credit card.
 
-<h2>The Road Ahead</h2>
+## The Road Ahead
 
 [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) of this series covers setting up an EC2 instance and connecting to it. [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) will cover installing NGINX, and configuring your DNS to serve your domain to your web host. [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) will cover setting up WordPress, and launching your website. [Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) will cover the finishing flourishes: setting up the CDN and s3 offload.
 

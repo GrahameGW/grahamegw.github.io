@@ -18,17 +18,17 @@ Unfortunately, "Free Tier" is a bit of a misnomer, or at least a "subject to ter
 
 <aside name="ts-and-cs">Subject to terms and conditions</aside>
 
-[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
-[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
-[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
-[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
-[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %})
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %})
+ | [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %})
+ | [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %})
+ | [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %})
+ | [Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %})
 
-Otherwise, let's do what we need to do now that <span name="wu-tang">money is once again part of the equation.</span> We're back with the (second) final part of <strong>How to Build a Free Website</strong>.
+Otherwise, let's do what we need to do now that <span name="wu-tang">money is once again part of the equation.</span> We're back with the (second) final part of **How to Build a Free Website.**
 
 <aside name="wu-tang">C.R.E.A.M.</aside>
 
-<h2>The Bill</h2>
+## The Bill
 
 I'll be the first to admit, I was not expecting the price tag on my first full month out of Free Tier services:
 
@@ -50,11 +50,11 @@ So I looked at the line items, and found the culprits:
 
 I'm getting slammed by RDS (database) costs. My EC2 costs are higher than I'd like, as they're break even with web hosting services for the same product and zero of the services. But there's no point in addressing the EC2 item if we can't do something about RDS.
 
-<h3>To RDS, or not to RDS?</h3>
+### To RDS, or not to RDS?
 
 An RDS instance under the hood is actually just a specialized EC2 instance a customer pays a bit more for to get certain features that are nice to have when you know you'll be running a database. Both my EC2 instance and my RDS instance use t2.micro boxes, but I paid an extra $0.006/hour for my RDS instance, plus an additional $2.30 for some additional storage costs (presumably for backups and database snapshots).
 
-The extra features are great if you're running a SaaS app in the cloud, storing business data, or doing other things where you need to keep your database on a different machine, ensure you've got that extra layer of protection, and so forth. If you're trying to run a simple WordPress website with two dozen pages and <em>maybe</em> 100 visitors a month, using RDS for your database is overkill in the extreme.
+The extra features are great if you're running a SaaS app in the cloud, storing business data, or doing other things where you need to keep your database on a different machine, ensure you've got that extra layer of protection, and so forth. If you're trying to run a simple WordPress website with two dozen pages and *maybe* 100 visitors a month, using RDS for your database is overkill in the extreme.
 
 There's a second point here that the additional costs of RDS also masks. AWS does pricing on "compute hours," which is calculated as:
 
@@ -68,7 +68,7 @@ Clearly then, the move is to ditch RDS altogether, in favor of bringing everythi
 
 <aside name="low-expectations">Though a boy can dream</aside>
 
-<h2>Relocating Databases</h2>
+## Relocating Databases
 
 Wouldn't it be great if we could somehow just copy-paste a database from one place to another? Ctrl+C, Ctrl+V, and move on with our life?
 
@@ -78,7 +78,7 @@ Actually, we can, or at least come close. All databases have an "export" functio
 
 First we need to get into our RDS instance. You <em>can</em> set up an SSH tunnel straight to the box (remember, an RDS instance is just an EC2 instance with some bells and whistles), but if you set it up properly you'll first have to reconfigure the security groups and then create a new tunnel from scratch. It would be great if we could get into another computer that's part of the security group, then go from there to the RDS instance.
 
-<h3>Exporting our current database</h3>
+### Exporting our current database
 
 Turns out, we've got something like that! SSH into your EC2 instance (which we know is in the group since it talks to the database). If you don't have it written down, you'll need to get all your database connection info from your <code>wp-config.php</code> file. You'll also need to <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04">install MySQL</a> on your EC2 instance if it's not already there. It's a straightforward process; just run the following three commands:
 
@@ -87,7 +87,7 @@ $ sudo apt install mysql-server
 $ sudo mysql_secure_installation
 </code></pre>
 
-You'll be prompted with a whole bunch of security questions. Create a password for the root user, and accept the defaults for everything else. Once you're done, check the status of the MySQL service with the command <code>service mysql status</code>.
+You'll be prompted with a whole bunch of security questions. Create a password for the root user, and accept the defaults for everything else. Once you're done, check the status of the MySQL service with the command `service mysql status`.
 
 Once MySQL is installed, we can connect to our remote RDS instance with a single command:
 
@@ -108,7 +108,7 @@ The only changes here are the program name (now <code>mysqldump</code>) and a ta
 
 Run the command. It'll take a few seconds or even a minute or two; any longer and either something is wrong or your site is way too popular for this tutorial. Once complete, we can <code>ls</code> in our current folder to check the export file is where we want it to be.
 
-<h3>Rebuilding our database</h3>
+### Rebuilding our database
 
 First, we need to set up our local MySQL install to receive our new database. We need to recreate the <code>wordpress</code> user, and take care of some general admin stuff. For a more detailed explanation of how to do this, check out Step Three of this <a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04#step-3-%E2%80%94-(optional)-adjusting-user-authentication-and-privileges">excellent Digital Ocean article</a>. For the quick and dirty version, simply run the following commands:
 
@@ -140,7 +140,7 @@ All that remains is cleanup. Edit your <code>wp-config.php</code> file with the 
 
 <aside name="boring">How boring</aside>
 
-<h2>Final Thoughts</h2>
+## Final Thoughts
 
 The other big pricing number was the cost of the EC2 instance itself. AWS has one option to allow you to reduce your costs there as well: pay up front. You can purchase a Reserved Instance credit for your EC2 instance, which lowers the cost by about 1/3. They've got a few different options, including pay upfront in full, pay partial upfront, 1-year, and 3-year terms. Not all options are available in all areas; I went with the 1-year/full upfront option as I intend to keep this site running for a long time still. By giving up scaling flexibility, which isn't really something I need, I can get rates less than what I would get at Bluehost or Hostgator.
 

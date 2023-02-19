@@ -12,11 +12,11 @@ Welcome to the final installment of Building a Free Website. We have a database,
 
 As the series has progressed, we've gotten a bit more technical and I've tried to hold your hand a bit less. We'll be kicking that up a notch here as well.
 
-[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
-[Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %}) | 
-[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
-[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
-[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %})
+ | [Part 2]({% post_url 2019-11-27-building-a-free-website-part-2 %})
+ | [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %})
+ | [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %})
+ | [Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 Now, without further ado, let's get to it.
 
