@@ -5,7 +5,7 @@ self:
     description: >
       A little chess demo I programmed to try out the first Godot 4 stable release. No AI or quality of life features 
       (flipping board, clocks, coordinate markers, etc., just basic drag & drop movement, square highlights, and a 
-      new game button. Download, unzip and run
+      new game button. Download, unzip and run.
     links: 
       - url: /games/BallardChess.zip
         text: Download (direct)
@@ -45,9 +45,8 @@ self:
   - name: Unfragile
     banner: /img/uf-gameplay.gif
     description: > 
-      Enemies can't hurt you, but the ground can. An infinite 2D sidescroller/bullet hell where you use the knockback
-      from enemy attacks to navigate through the procedurally-generated caverns, trying to get as far as you can. Written
-      directly in C/C++ using SDL2. I designed the various cavern sections and wrote a custom JSON parser to use to import
+      An infinite 2D sidescroller/bullet hell where you use the knockback from enemy attacks to navigate through the procedurally-generated caverns, 
+      trying to get as far as you can. Written in C/C++ using SDL2. I designed the various cavern sections and wrote a custom JSON parser to use to import
       maps from <a href="https://www.mapeditor.org/">Tiled</a>. The whole game is tiny&mdash;only 7 MB (most of which is the music)!
     links:
       - url: https://notnullnotvoid.itch.io/unfragile
