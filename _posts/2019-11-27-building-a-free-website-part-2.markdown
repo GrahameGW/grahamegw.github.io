@@ -7,11 +7,11 @@ tags:   Projects Tech
 
 This tutorial is the second in my series on setting up a website using free infrastructure. In this section we'll cover booting up and connecting to your EC2 instance, configuring security groups, and some basic command line tools for folks who have never used the command line before.
 
-[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %}) | 
-[Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %}) | 
-[Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %}) | 
-[Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %}) | 
-[Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
+[Part 1]({% post_url 2019-11-12-building-a-free-website-part-1 %})
+ | [Part 3]({% post_url 2019-12-28-building-a-free-website-part-3 %})
+ | [Part 4]({% post_url 2020-01-20-building-a-free-website-part-4 %})
+ | [Part 5]({% post_url 2020-03-21-building-a-free-website-part-5 %})
+ | [Epilogue]({% post_url 2020-10-25-building-a-free-website-epilogue %})
 
 <h2>EC2 overview</h2>
 
