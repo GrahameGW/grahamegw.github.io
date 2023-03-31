@@ -1,5 +1,5 @@
 
-## todo()!;
+## todo!();
 - **Write more blog posts!**
     - Can't use gold leaf to patch rusty processes
 - Responsive nav bar for smaller screens
