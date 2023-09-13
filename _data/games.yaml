@@ -4,7 +4,7 @@ self:
     banner: /img/games/ballard-chess.png
     description: >
       A little chess demo I programmed to try out the first Godot 4 stable release. No AI or quality of life features 
-      (flipping board, clocks, coordinate markers, etc., just basic drag & drop movement, square highlights, and a 
+      (flipping board, clocks, coordinate markers, etc.), just basic drag & drop movement, square highlights, and a 
       new game button. Download, unzip and run.
     links: 
       - url: /games/BallardChess.zip
