@@ -61,10 +61,8 @@ The first thing we want to do is switch to the <code>root</code> user, which wil
 
 <pre><code class="language-shell">$ sudo su root</code></pre>
 
-<ul>
-  <li>**sudo: **"Super user do."  Until we have root access, we are limited to doing things on our instance based on the permissions our current user has. <code>sudo</code> allows us to run commands as though we had full admin privileges, which is exactly what we need to change to the root user.</li>
-  <li>**su:** "Switch user." We follow it with the name of the user we wish to change to, hence <code>su root</code>.</li>
-</ul>
+- **sudo:** "Super user do."  Until we have root access, we are limited to doing things on our instance based on the permissions our current user has. <code>sudo</code> allows us to run commands as though we had full admin privileges, which is exactly what we need to change to the root user.
+- **su:** "Switch user." We follow it with the name of the user we wish to change to, hence <code>su root</code>.
 
 Now we have root access, let's make sure we have all the latest updates. Type:
 
@@ -103,13 +101,13 @@ We can edit the HTML of the home page using the nano editor. Change one of the t
 
 Let's take a quick minute to set up our web domain so we don't need to use our IP address to find our website. Exact instructions will vary depending on where you purchased your domain and how the registrar/DNS host is set up; however they will all allow you to accomplish the same thing by adding **DNS Records**.
 
-The Domain Name Service (DNS) is, to use a classic analogy, the phone book of the internet. Just as folks used to use the <span name="yellow-pages">Yellow Pages</span> to look up phone numbers, internet users use DNS to look up the IP address of a website by searching for its name and then <span name="dialing">dialing the IP</span> associated with the web domain. Right now, we have an entry in the phone book, but it's just our name—there's no <s>phone number</s> IP address associated with it.
+The Domain Name Service (DNS) is, to use a classic analogy, the phone book of the internet. Just as folks used to use the <span name="yellow-pages">Yellow Pages</span> to look up phone numbers, internet users use DNS to look up the IP address of a website by searching for its name and then <span name="dialing">dialing the IP</span> associated with the web domain. Right now, we have an entry in the phone book, but it's just our name—there's no ~~phone number~~ IP address associated with it.
 
 <aside name="yellow-pages">Only 90's kids will understand</aside>
 
 <aside name="dialing">The internet actually used to dial things, like a real phone. It was a dark time.</aside>
 
-To point our domain to an IP address, we need to add an **A Record**. If you're using AWS' Route 53, this can be done by pressing the "Create Record Set" button. Set the *name *to <code>@</code>* *(or leave it blank, if allowed) and the *value* to your IP address, and <span name="leave-the-defaults">save the record.</span> It's also good practice to add a record to handle the *www.* subdomain. Either add another A record pointing to your IP address with *name* as <code>www</code>, or add a **CNAME Record** pointing *www* to your root domain (<code>mywebsite.com</code>).
+To point our domain to an IP address, we need to add an **A Record**. If you're using AWS' Route 53, this can be done by pressing the "Create Record Set" button. Set the *name* to <code>@</code>(or leave it blank, if allowed) and the *value* to your IP address, and <span name="leave-the-defaults">save the record.</span> It's also good practice to add a record to handle the *www.* subdomain. Either add another A record pointing to your IP address with *name* as <code>www</code>, or add a **CNAME Record** pointing *www* to your root domain (<code>mywebsite.com</code>).
 
 <aside name="leave-the-defaults">It's fine to leave the rest of the defaults alone</aside>
 
@@ -179,14 +177,12 @@ Open up our new config file and delete out the commented lines (start with a #) 
 
 Whenever NGINX receives a request from a user, it checks the configuration files associated with the request and uses the instructions within the config file to serve the page. NGINX can run several virtual servers at once, each with instructions defined in a <code>server {...}</code> block. Within each server block are the configuration instructions for that server. To make our site work, we need to have the following commands defined:
 
-<ul>
-  <li>**listen**: Tells NGINX what port to listen on. 80 is the default for HTTP, which matches our security group rules. The <code>default_server</code> parameter is an optional rule that tells NGINX what to serve if it can't figure out how to deal with  conflicting information.</li>
-  <li>**server_name: **The domain (or IP address) of our site. Any requests coming through the listening port that match the domain of the <code>server_name</code> will continue to be processed within this block. You can have several <code>server_name</code> entries in case you want multiple domains or subdomains to behave the same way; e.g. <code>server_name mydomain.com www.mydomain.com;</code> will cause requests that omit the "www" to <span name="wont-redirect">behave the same way</span> as those that remember to add it.</li>
-  <li>**root:** The root folder of our website. We created our website folder earlier at <code>/var/www/mywebsite.com</code>.</li>
-  <li>**index: **The home page of the website. We created ours earlier at <code>index.html</code>. You can also add <code>index.php</code> in anticipation of installing Wordpress, which uses PHP to deliver web pages.</li>
-  <li>**location: **<code>location</code> tells NGINX what to do for specific requests within our website. Thankfully, we don't have to define <code>location</code> rules for every web page we have. Instead, we can use <code>location / {...}</code> to define a generic behavior for all traffic that ends up at our root folder.</li>
-  <li>**try_files:** The try_files command tells a request that makes it into the location block to go to the designated locations. We can leave the defaults as is; our current command checks the request path and if it doesn't exist delivers a *404: Page Not Found*error to the client.</li>
-</ul>
+- **listen**: Tells NGINX what port to listen on. 80 is the default for HTTP, which matches our security group rules. The <code>default_server</code> parameter is an optional rule that tells NGINX what to serve if it can't figure out how to deal with  conflicting information.
+- **server_name:** The domain (or IP address) of our site. Any requests coming through the listening port that match the domain of the <code>server_name</code> will continue to be processed within this block. You can have several <code>server_name</code> entries in case you want multiple domains or subdomains to behave the same way; e.g. <code>server_name mydomain.com www.mydomain.com;</code> will cause requests that omit the "www" to <span name="wont-redirect">behave the same way</span> as those that remember to add it.
+- **root:** The root folder of our website. We created our website folder earlier at <code>/var/www/mywebsite.com</code>.
+- **index:** The home page of the website. We created ours earlier at <code>index.html</code>. You can also add <code>index.php</code> in anticipation of installing Wordpress, which uses PHP to deliver web pages.
+- **location:** <code>location</code> tells NGINX what to do for specific requests within our website. Thankfully, we don't have to define <code>location</code> rules for every web page we have. Instead, we can use <code>location / {...}</code> to define a generic behavior for all traffic that ends up at our root folder.
+- **try_files:** The try_files command tells a request that makes it into the location block to go to the designated locations. We can leave the defaults as is; our current command checks the request path and if it doesn't exist delivers a *404: Page Not Found*error to the client.
 
 <aside name="wont-redirect">This will not *redirect* users, so if you want everyone to end up at one domain or another, we'll need to create a redirect rule in a new server block. We'll cover that in a later section of this series.</aside>
 
