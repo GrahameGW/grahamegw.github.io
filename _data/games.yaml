@@ -1,15 +1,25 @@
 
-
 self:
+  - name: Chess
+    banner: /img/games/ballard-chess.png
+    description: >
+      A little chess demo I programmed to try out the first Godot 4 stable release. No AI or quality of life features 
+      (flipping board, clocks, coordinate markers, etc.), just basic drag & drop movement, square highlights, and a 
+      new game button. Download, unzip and run.
+    links: 
+      - url: /games/BallardChess.zip
+        text: Download (direct)
+
   - name: Specimen
     banner: /img/games/specimen.jpg
     description: >
       Escape the haunted forest with your army of horrible creatures in this Diablo-inspired souls-like adventure! 
       Wielding the mighty Leto Orb, control your specimens as they fight through the denizens of the haunted forest, 
-      feeding on their biomass to grow into horrible monstrosities... but are they horrible enough to carry you to freedom?
+      feeding on their biomass to grow into horrible monstrosities...
     links:
       - url: https://metapilgrim.itch.io/specimen
         text: Play (itch.io)
+
   - name: Casting Lots
     banner: /img/games/casting-lots-banner.png
     description: >
@@ -32,6 +42,18 @@ self:
       - url: https://metapilgrim.itch.io/some-of-your-parts
         text: Download (itch.io)
 
+  - name: Unfragile
+    banner: /img/uf-gameplay.gif
+    description: > 
+      An infinite 2D sidescroller/bullet hell where you use the knockback from enemy attacks to navigate through the procedurally-generated caverns.
+      Written in C/C++ using SDL2. I designed the various cavern sections and wrote a custom JSON parser to use to import
+      maps from <a href="https://www.mapeditor.org/">Tiled</a>. The whole game is tiny&mdash;only 7 MB!
+    links:
+      - url: https://notnullnotvoid.itch.io/unfragile
+        text: Download (itch.io)
+      - url: /games/unfragile.zip
+        text: Download (direct)
+
   - name: Cave Storm
     banner: /img/games/cave-storm-banner.png
     description: >
@@ -43,13 +65,14 @@ self:
       - url: https://metapilgrim.itch.io/cave-storm
         text: Download (itch.io)
 
+
   - name: Radio Town
     banner: /img/games/radio-town-title.jpg
     description: >
       Pick up the pieces of a broken community through the power of Radio! Radio Town is a narrative adventure 
       about a forgotten town in the wake of massive societal upheaval. Play as Khalid, a vagabond-turned-DJ 
-      trying to reboot the local community radio station and rebuild a lost community full of colorful characters 
-      and challenging story arcs. Developed for the <a href="https://itch.io/jam/gdex-2020"> 2020 GDEX Game Jam</a>.
+      trying to reboot the local community radio station and rebuild a lost community. 
+      Developed for the <a href="https://itch.io/jam/gdex-2020"> 2020 GDEX Game Jam</a>.
     links:
       - url: https://metapilgrim.itch.io/radio-town
         text: Download (itch.io)
@@ -80,8 +103,8 @@ self:
     banner: /img/games/tux-repair-banner.png
     description: >
       Play as Cecil, the penguin janitor tasked with cleaning and resetting the dungeon 
-      after the destruction caused by the latest hero’s attempt to clear the level. 
-      Be careful–the traps and monsters are just as deadly to you as they are to the heroes!
+      after the destruction caused by the latest hero's attempt to clear the level. 
+      Be careful...the traps and monsters are just as deadly to you as they are to the heroes!
     links:
       - url: https://rdgoetz.github.io/GGJ2020/game/
         text: Play (Github Pages)
