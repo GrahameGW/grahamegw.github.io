@@ -107,7 +107,7 @@ The Domain Name Service (DNS) is, to use a classic analogy, the phone book of th
 
 <aside name="dialing">The internet actually used to dial things, like a real phone. It was a dark time.</aside>
 
-To point our domain to an IP address, we need to add an **A Record**. If you're using AWS' Route 53, this can be done by pressing the "Create Record Set" button. Set the *name* to <code>@</code>(or leave it blank, if allowed) and the *value* to your IP address, and <span name="leave-the-defaults">save the record.</span> It's also good practice to add a record to handle the *www.* subdomain. Either add another A record pointing to your IP address with *name* as <code>www</code>, or add a **CNAME Record** pointing *www* to your root domain (<code>mywebsite.com</code>).
+To point our domain to an IP address, we need to add an **A Record**. If you're using AWS' Route 53, this can be done by pressing the "Create Record Set" button. Set the *name* to <code>@</code> (or leave it blank, if allowed) and the *value* to your IP address, and <span name="leave-the-defaults">save the record.</span> It's also good practice to add a record to handle the *www.* subdomain. Either add another A record pointing to your IP address with *name* as <code>www</code>, or add a **CNAME Record** pointing *www* to your root domain (<code>mywebsite.com</code>).
 
 <aside name="leave-the-defaults">It's fine to leave the rest of the defaults alone</aside>
 
