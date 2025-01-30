@@ -1,5 +1,15 @@
 
 self:
+  - name: Bubble Bots
+    banner: /img/games/bubble-bots.png
+    description: >
+      Pop bubbles that are sitting on top of expressive Y2K robots at the mall, at the movies, or wherever they find
+      themselves. Did a bit of ad hoc programming for a team of Seattle Indies devs as part of the 2025 Global Game Jam.
+      First time working in Unity 6; easily the most polished result I've had come out of a game jam to date.
+    links:
+      - url: https://maximthegamedev.itch.io/y2k-bubble
+        text: Play (itch.io)
+        
   - name: Chess
     banner: /img/games/ballard-chess.png
     description: >
