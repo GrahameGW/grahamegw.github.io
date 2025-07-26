@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
     $(window).resize(refreshAsides);
+    $(window).resize(moveAsidesToBottom);
   
     // Since we may not have the height correct for the images, adjust the asides
     // too when an image is loaded.
@@ -23,6 +24,7 @@ $(document).ready(function() {
     window.setTimeout(refreshAsides, 200);
   
     refreshAsides();
+    moveAsidesToBottom();
   });
   
   function refreshAsides() {
@@ -42,5 +44,24 @@ $(document).ready(function() {
       }
   
       aside.offset({top: span.position().top + 8});
+    });
+  }
+  
+  function moveAsidesToBottom() {
+    // Only on small screens
+    if ($(document).width() >= 800) return;
+    var $footer = $("footer");
+    if ($footer.length === 0) return;
+    // Create or select a container for asides before the footer
+    var $asideContainer = $("#mobile-asides");
+    if ($asideContainer.length === 0) {
+      $asideContainer = $('<div id="mobile-asides" style="padding: 1em 0 1em 0;"></div>');
+      $footer.before($asideContainer);
+    } else {
+      $asideContainer.empty();
+    }
+    // Move all asides into the container
+    $("aside").each(function() {
+      $asideContainer.append($(this));
     });
   }
