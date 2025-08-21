@@ -18,7 +18,7 @@ layout: page
         <h3>{{ entry.form }}</h3>
     </div>
 </div>
-<div class="fiction-body">
+<div class="fiction-body{% unless forloop.last %} with-border{% endunless %}">
     {% if entry.img.size > 0 %}
     <table>
         <tr>
