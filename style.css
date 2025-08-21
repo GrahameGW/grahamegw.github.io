@@ -13,7 +13,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: Montserrat, sans-serif;
+    /* font-family: Monserrat, sans-serif; */
+    font-family: Arimo, ans-seriif
 }
 
 footer {
@@ -58,7 +59,7 @@ h3 {
 }
 
 li {
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.5em;
 }
 
 nav h2 {
@@ -124,6 +125,7 @@ pre {
     font-size: 0.9rem;
 }
 pre>code {
+    font-family: Cousine, Courier, mo;
     font-weight: initial;
 }
 

@@ -9,7 +9,7 @@ This is the second iteration of a "from scratch" website in the vein of my serie
 
 Ironically, the new version is 100% free whereas the old version was only free until I ran out of AWS free tier credits. This one will remain free in perpetuity (or at least until Microsoft starts charging for Github). Because of how Github Pages works, the source code, drafts, and notes are all publicly visible on my [Github](https://github.com/GrahameGW/grahamegw.github.io), which felt weird at first but I now find I actually prefer it this way. I can always keep personal stuff saved in my storage and I've been leaning more into the idea of [working with the garage door up](https://notes.andymatuschak.org/About_these_notes?stackedNotes=z21cgR9K3UcQ5a7yPsj2RUim3oM2TzdBByZu), even if I've not been that successful about implementing it to date.
 
-<aside name="support-tom">Tom MacWright <a href="https://ko-fi.com/s/76c66ec563">sells his theme on ko-fi</a> if you're interested in the aesthetic and want something that isn't bodged together this site.</aside>
+<aside name="support-tom">Tom MacWright <a href="https://ko-fi.com/s/76c66ec563">sells his theme on ko-fi</a> if you're interested in the aesthetic and want something that isn't bodged together like this site.</aside>
 
 ## Visions of Magnificence
 
@@ -40,7 +40,6 @@ The main difference is that none of the things on my list are "new" things. They
 <aside name="godot"><a href="https://godotengine.org/article/godot-4-0-sets-sail/">Godot 4</a> in this case</aside>
 
 I'm sure fading motivation is a problem endemic to the human condition and not just something I face. Finding external sources of accountability has always been critical to succeeding with long-term projects. Self-accountability is not a system that works for me; not due to a lack of work ethic but because there are just too many cool new things out there to discover. If you have any tips on this front I'm all ears.
-
 
 > "Un ouverage n'est jamais achevé...mais abandoneé." &nbsp;&mdash; Paul Valéry
 
