@@ -4,6 +4,13 @@ title: Articles
 <div>
     <h1>Articles</h1>
 </div>
+<p class="subscribe-note">Future articles will be published at <a href="https://grahame.fyi">grahame.fyi</a>. Subscribe below to get them by email.</p>
+<form class="subscribe-form" action="https://leaflet.pub/api/auth/email-login" method="get">
+  <input type="hidden" name="action" value="%7B%22action%22%3A%22subscribe%22%2C%22publication%22%3A%22at%3A%2F%2Fdid%3Aplc%3Ahjp4al7ye2fl42osapkat2dt%2Fsite.standard.publication%2F3m3vpe5il7k2s%22%7D" />
+  <input type="hidden" name="redirect" value="https://grahame.fyi" />
+  <input type="email" name="email" placeholder="you@example.com" required />
+  <button type="submit">Subscribe</button>
+</form>
 <div class="post-list">
     {% assign year = "" %}
     {% assign post_year = "" %}

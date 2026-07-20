@@ -97,6 +97,46 @@ main img {
     margin: auto 0;
 }
 
+.subscribe-note {
+    margin: 1rem 0 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.subscribe-form input[type="email"],
+.subscribe-form button {
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid rgb(100, 140, 180);
+    background: none;
+    color: #111;
+}
+
+.subscribe-form input[type="email"] {
+    flex: 1;
+}
+
+.subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: rgb(22, 136, 223);
+}
+
+.subscribe-form button {
+    color: #555;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    color: rgb(22, 136, 223);
+    border-color: rgb(22, 136, 223);
+}
+
 .post-list {
     display: grid;
     grid-column-gap: 5px;
@@ -328,6 +368,9 @@ blockquote code {
     .img-column-50 {
         flex: 100%;
         padding: 2px;
+    }
+    .subscribe-form {
+        flex-direction: column;
     }
     footer {
         left: 0;
